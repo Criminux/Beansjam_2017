@@ -9,6 +9,6 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Constants
 	{
 		public const string AxisVertical = "Vertical";
 		public const string AxisMouseX = "Mouse X";
-		public const string AxisMouseY = "Mouse Y;
+		public const string AxisMouseY = "Mouse Y";
 	}
 }
