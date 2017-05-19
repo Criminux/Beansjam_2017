@@ -458,6 +458,7 @@ GameObject:
   - component: {fileID: 1773299106}
   - component: {fileID: 1773299107}
   - component: {fileID: 1773299108}
+  - component: {fileID: 1773299109}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -582,6 +583,18 @@ MonoBehaviour:
   initialHealth: 100
   initialShield: 120
   shieldRegenerationPerSecond: 10
+--- !u!114 &1773299109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1773299100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9e717c816f95140926fb507815fe0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthDecreasePerSecond: 20
 --- !u!1 &1814514053
 GameObject:
   m_ObjectHideFlags: 0
