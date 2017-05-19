@@ -24,18 +24,28 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour
 		/// </summary>
 		public event LeftWarningAreaHandler LeftWarningArea;
 
-		void OnCollisionExit(Collision collision)
+		void OnTriggerExit(Collider collider)
 		{
-			if (collision.gameObject.tag.Equals(Tags.LegalArea))
-				LeftLegalArea();
-			else if (collision.gameObject.tag.Equals(Tags.WarningArea))
-				LeftWarningArea();
+			if (collider.tag == Tags.LegalArea)
+			{
+				if (LeftLegalArea != null) LeftLegalArea();
+				Debug.Log(gameObject.name + " left the legal area");
+			}
+			else if (collider.tag == Tags.WarningArea)
+			{
+				if (LeftWarningArea != null) LeftWarningArea();
+				Debug.Log(gameObject.name + " left the warning area");
+			}
+
 		}
 
-		void OnCollisionEnter(Collision collision)
+		void OnTriggerEnter(Collider collider)
 		{
-			if (collision.gameObject.tag.Equals(Tags.LegalArea))
-				ReenteredLegalArea();
+			if (collider.tag == Tags.LegalArea)
+			{
+				if (ReenteredLegalArea != null) ReenteredLegalArea();
+				Debug.Log(gameObject.name + " reentered the legal area");
+			}
 		}
 
 		public delegate void LeftLegalAreaHandler();
