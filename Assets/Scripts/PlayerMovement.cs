@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+    [SerializeField]
+    float speed;
+    Rigidbody rigid;
+
+	void Start ()
+    {
+        rigid = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void FixedUpdate ()
+    {
+        float horizontal = Input.GetAxis("Vertical");
+
+        rigid.velocity = new Vector3(0,0,horizontal * speed);
+        
+        Debug.Log(rigid.velocity);
+        
 	}
 }
