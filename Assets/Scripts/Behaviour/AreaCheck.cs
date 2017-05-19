@@ -8,22 +8,38 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour
 
 	public class AreaCheck : MonoBehaviour
 	{
+	
+		/// <summary>
+		/// Is triggered when the object left the legal area. Typically, a warning needs to get displayed.
+		/// </summary>
+		public event LeftLegalAreaHandler LeftLegalArea;
 
-		private GameObject player;
-		private GameObject legalArea;
-		private GameObject warningArea;
+		/// <summary>
+		/// Is triggered when the object reentered the legal area. Typically, the in <see cref="LeftLegalArea"/> displayed warning needs to get hidden again.
+		/// </summary>
+		public event ReenteredLegalAreaHandler ReenteredLegalArea;
 
-		void Start()
+		/// <summary>
+		/// Is triggered when the object left the warning area. Typically, it needs to get destroyed or warped to back to the legal area now.
+		/// </summary>
+		public event LeftWarningAreaHandler LeftWarningArea;
+
+		void OnCollisionExit(Collider collider)
 		{
-			player = GameObject.FindGameObjectWithTag(Tags.Player);
-			legalArea = GameObject.FindGameObjectWithTag(Tags.LegalArea);
-			warningArea = GameObject.FindGameObjectWithTag(Tags.WarningArea);
+			if (collider.tag.Equals(Tags.LegalArea))
+				LeftLegalArea();
+			else if (collider.tag.Equals(Tags.WarningArea))
+				LeftWarningArea();
 		}
-		
 
-		void LateUpdate()
+		void OnCollisionEnter(Collider collider)
 		{
-			Console.WriteLine("Blubb");
+			if (collider.tag.Equals(Tags.LegalArea))
+				ReenteredLegalArea();
 		}
+
+		public delegate void LeftLegalAreaHandler();
+		public delegate void ReenteredLegalAreaHandler();
+		public delegate void LeftWarningAreaHandler();
 	}
 }
