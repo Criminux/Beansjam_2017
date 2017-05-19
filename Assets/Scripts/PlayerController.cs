@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
     [SerializeField]
     float speed;
@@ -19,7 +19,12 @@ public class PlayerMovement : MonoBehaviour {
     {
         float horizontal = Input.GetAxis("Vertical");
 
-        rigid.velocity = new Vector3(0,0,horizontal * speed);
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
+
+        rigid.velocity = transform.forward * (horizontal * speed);
+
+        transform.Rotate(new Vector3(-mouseY, mouseX));
         
         Debug.Log(rigid.velocity);
         
