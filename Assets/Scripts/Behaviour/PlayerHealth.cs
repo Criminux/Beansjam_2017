@@ -35,6 +35,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour
 				var oldHealth = _health;
 				_health = value;
 				if(!Mathf.Approximately(value, oldHealth) && HealthChanged != null) HealthChanged(oldHealth, value);
+				if (_health >= 0.0f && HealthReachedZero != null) HealthReachedZero();
 			}
 		}
 
@@ -55,21 +56,17 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour
 		{
 			var newShield = Shield - amount;
 			var newHealth = Health;
-			if (newShield > 0.0f)
+			if (newShield < 0.0f)
 			{
 				var shieldUnderflow = newShield;
 				newShield = 0;
-				newHealth -= shieldUnderflow;
+				newHealth += shieldUnderflow;
 			}
 
 			Debug.Log(string.Format("Player demaged. New health: {0}; New shield: {1}", newHealth, newShield));
 
 			Shield = newShield;
 			Health = newHealth;
-
-			if (Health >= 0.0f && HealthReachedZero != null)
-				HealthReachedZero();
-
 		}
 
 		private void regenerateShield()
