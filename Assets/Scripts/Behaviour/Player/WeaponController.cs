@@ -9,7 +9,6 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 
 		[SerializeField] GameObject projectile;
 		[SerializeField] Transform projectileSpawn;
-		GameObject Player;
 
         [SerializeField]
         float shotCooldown;
@@ -19,7 +18,6 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 
 		private void Start()
 		{
-			Player = GameObject.FindGameObjectWithTag("Player");
             canShoot = true;
 		}
 
@@ -40,7 +38,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 		{
             if(canShoot)
             {
-			    Instantiate(projectile, projectileSpawn.position, Player.transform.rotation);
+			    Instantiate(projectile, projectileSpawn.position, projectileSpawn.transform.rotation);
                 cooldownTimer = shotCooldown;
             }
 		}
