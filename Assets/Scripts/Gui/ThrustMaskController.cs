@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 {
-	public class UiThrustMaskController : MonoBehaviour
+	public class ThrustMaskController : MonoBehaviour
 	{
 
 		private ShipMovement shipMovement;
