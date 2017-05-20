@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects;
 using UnityEngine;
 
 namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
@@ -21,14 +22,16 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 		[SerializeField] private float maxForwardSpeed;
 
 		/// <summary>
-		/// How fast forward speed should decrease when receiving negative input.
+		/// How fast forward speed should decrease when receiving negative input. Should be positive since it gets multiplied with the negative input.
 		/// </summary>
 		[SerializeField] private float forwardDeceleration;
 
 		/// <summary>
-		/// How fast forward speed should increase when receiving positive input. Should be positive since it gets multiplied with the negative input.
+		/// How fast forward speed should increase when receiving positive input. 
 		/// </summary>
 		[SerializeField] private float forwardAcceleration;
+
+		[SerializeField] private float forwardAccelerationSpeed;
 
 		/// <summary>
 		/// The maximum roll speed in both directions.  Will not be reached because of <see cref="rollDecelration"/>.
@@ -75,6 +78,10 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 		/// </summary>
 		[SerializeField] private float pitchDecelration;
 
+		[SerializeField] private float collisionKnockback;
+
+		[SerializeField] private int demageOnCollision;
+
 
 		public float ForwardSpeed { get; private set; }
 		public float RollSpeed { get; private set; }
@@ -83,6 +90,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 
 		private Rigidbody body;
 		private InputProvider inputProvider;
+		private ObjectHealth objectHealth;
 
 		public float MaxForwardSpeed
 		{
@@ -92,6 +100,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 		void Start()
 		{
 			body = GetComponent<Rigidbody>();
+			objectHealth = GetComponent<ObjectHealth>();
 			inputProvider = GetComponent<InputProvider>();
 		}
 		
@@ -106,13 +115,23 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 			transform.Rotate(PitchSpeed, YawSpeed, RollSpeed);
 		}
 
+		void OnCollisionEnter(Collision collision)
+		{
+			if (collision.gameObject.GetComponent<CausesShipKnockback>() != null)
+			{
+				ForwardSpeed = -collisionKnockback;
+				objectHealth.Demage(demageOnCollision);
+			}
+		}
+
 		private void UpdateForwardSpeed(float input)
 		{
 			var forwardAddition = input < 0.0f
 				? input * forwardDeceleration * Time.deltaTime
 				: input * forwardAcceleration * Time.deltaTime;
 
-			ForwardSpeed = Mathf.Clamp(ForwardSpeed + forwardAddition, minForwardSpeed, maxForwardSpeed);
+			var targetSpeed = Mathf.Clamp(ForwardSpeed + forwardAddition, minForwardSpeed, maxForwardSpeed);
+			ForwardSpeed = Mathf.Lerp(ForwardSpeed, targetSpeed, Time.deltaTime * forwardAccelerationSpeed);
 		}
 
 		private void UpdateRollSpeed(float input)

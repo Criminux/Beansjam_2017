@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 82306080852714094}
   - component: {fileID: 114626919137072858}
   - component: {fileID: 114663692622799116}
+  - component: {fileID: 114426822697977058}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -141,7 +142,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1313843072457408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.2, y: 0, z: 0}
+  m_LocalPosition: {x: -112.9, y: 0, z: 102.2}
   m_LocalScale: {x: 1199.9994, y: 299.99985, z: 300}
   m_Children:
   - {fileID: 4106966414793924}
@@ -451,6 +452,17 @@ MonoBehaviour:
   initialHealth: 100
   initialShield: 120
   shieldRegenerationPerSecond: 10
+--- !u!114 &114426822697977058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1313843072457408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f27f7a1eed01ac46a231fa73f368825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114505527764115572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -516,7 +528,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeaec0ba42af96e47ada44721be81a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceToKeep: 0
+  distanceToKeep: 75
+  speed: 0.2
+  weapons:
+  - {fileID: 114505527764115572}
+  - {fileID: 114007617634880924}
 --- !u!114 &114754708701851108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -556,6 +572,7 @@ MonoBehaviour:
   maxForwardSpeed: 30
   forwardDeceleration: 20
   forwardAcceleration: 30
+  forwardAccelerationSpeed: 50
   maxRollSpeed: 1.4
   rollAcceleration: 50
   rollDecelration: 3
@@ -565,3 +582,5 @@ MonoBehaviour:
   maxPitchSpeed: 1.2
   pitchAcceleration: 50
   pitchDecelration: 3
+  collisionKnockback: 20
+  demageOnCollision: 10

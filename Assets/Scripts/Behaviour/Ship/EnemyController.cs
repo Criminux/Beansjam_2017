@@ -9,74 +9,42 @@ using UnityEngine;
 
 namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 {
-	public class EnemyController : MonoBehaviour, ShipMovement.InputProvider, ShipShooting.InputProvider
+	public class EnemyController : MonoBehaviour
 	{
 
-		[SerializeField] private float distanceToKeep;
+		[SerializeField]
+        private float distanceToKeep;
 
-		[CanBeNull]
-		public GameObject AttackingObject { get; private set; }
+        [SerializeField]
+        private float speed;
+
+        [SerializeField]
+        WeaponController[] weapons;
+
+
+        private Transform playerTransform;
 
 		void Start()
 		{
-			AttackingObject = GameObject.FindGameObjectWithTag(Tags.Player);
-		}
+            playerTransform = GameObject.FindGameObjectWithTag(Tags.Player).GetComponent<Transform>();
+        }
 
-		public float GetForwardInput()
-		{
-			var normalizedDistance = (AttackingObject.transform.position -
-			                          transform.position +
-			                          (transform.forward * distanceToKeep))
-				.normalized;
+        private void Update()
+        {
+            transform.LookAt(playerTransform);
 
-			if (Vector3.Dot(normalizedDistance, transform.forward) > 0)
-			{
-				return 1;
-			}
-			else
-			{
-				return 0;
-			}
-		}
+            if(Vector3.Distance(transform.position, playerTransform.position) > distanceToKeep)
+            {
+                transform.position += transform.forward * speed;
+            }
+            else
+            {
+                foreach(WeaponController weapon in weapons)
+                {
+                    weapon.Shoot();
+                }
+            }
+        }
 
-		public float GetRollInput()
-		{
-			return GetRotationDeltaToAttackingObject().z;
-		}
-
-		public float GetYawInput()
-		{
-			return GetRotationDeltaToAttackingObject().y;
-		}
-
-		public float GetPitchInput()
-		{
-			return GetRotationDeltaToAttackingObject().x;
-		}
-
-		private Vector3 GetRotationDeltaToAttackingObject()
-		{
-			var positionDelta = AttackingObject.transform.position - transform.position;
-			var targetRotation = Quaternion.LookRotation(positionDelta, Vector3.forward);
-
-			return targetRotation.eulerAngles - transform.rotation.eulerAngles;
-		}
-
-		public bool GetShootingInput()
-		{
-			return true;
-			if (AttackingObject == null)
-			{
-				return false;
-			}
-			else
-			{
-				Ray ray = new Ray(transform.position, transform.forward);
-				RaycastHit hit;
-				var raycast = Physics.Raycast(ray, out hit);
-				// TODO: Find some other way to check if the hit object is the attacking object.
-				return hit.collider != null && hit.collider.tag == AttackingObject.tag;
-			}
-		}
-	}
+    }
 }
