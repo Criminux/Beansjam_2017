@@ -11,9 +11,12 @@ public class AsteroidDestruction : MonoBehaviour {
 
 	void Start ()
 	{
-        Instantiate(pickUp, transform.position, Quaternion.identity);
-        GetComponent<ObjectHealth>().HealthReachedZero += () => 
-		Destroy(gameObject);
+
+        GetComponent<ObjectHealth>().HealthReachedZero += () =>
+		{
+			Instantiate(pickUp, transform.position, Quaternion.identity);
+			Destroy(gameObject);
+        };
 	}
 	
 }
