@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour
+namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 {
 	/// <summary>
 	/// See https://en.wikipedia.org/wiki/File:Flight_dynamics_with_text.png.
@@ -81,11 +81,11 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour
 		public float YawSpeed { get; private set; }
 		public float PitchSpeed { get; private set; }
 
-		private Rigidbody rigidbody;
+		private Rigidbody body;
 
 		void Start()
 		{
-			rigidbody = GetComponent<Rigidbody>();
+			body = GetComponent<Rigidbody>();
 		}
 		
 		void FixedUpdate()
@@ -95,8 +95,8 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour
 			UpdateYawSpeed();
 			UpdatePitchSpeed();
 
-			rigidbody.velocity = transform.forward * ForwardSpeed;
-			Debug.Log("Velocity: " + rigidbody.velocity);
+			body.velocity = transform.forward * ForwardSpeed;
+			Debug.Log("Velocity: " + body.velocity);
 
 			transform.Rotate(PitchSpeed, YawSpeed, RollSpeed);
 		}

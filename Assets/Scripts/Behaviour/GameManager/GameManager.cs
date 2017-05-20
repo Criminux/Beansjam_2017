@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour
+namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameManager
 {
 
 	public class GameManager : MonoBehaviour
