@@ -8,6 +8,9 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour, ShipMovement.InputProvider, ShipShooting.InputProvider
 {
+
+	[SerializeField] private float distanceToKeep;
+
 	[CanBeNull]
 	public GameObject AttackingObject
 	{
@@ -20,7 +23,19 @@ public class EnemyController : MonoBehaviour, ShipMovement.InputProvider, ShipSh
 
 	public float GetForwardInput()
 	{
-		return 0;
+		var normalizedDistance = (AttackingObject.transform.position - 
+			 transform.position +
+			(transform.forward * distanceToKeep))
+			.normalized;
+
+		if (Vector3.Dot(normalizedDistance, transform.forward) > 0)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	public float GetRollInput()
