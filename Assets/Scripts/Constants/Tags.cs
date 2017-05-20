@@ -11,5 +11,6 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Constants
 		public const string LegalArea = "LegalArea";
 		public const string WarningArea = "WarningArea";
         public const string GameManager = "GameManager";
+		public const string Enemy = "Enemy";
 	}
 }

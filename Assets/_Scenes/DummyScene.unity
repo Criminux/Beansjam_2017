@@ -532,6 +532,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b7cd56d9c4cc25469254573e2fd65c2, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &903315002
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4556405433606408, guid: 94e72ca597d7d7a4bbcfa03a40743cc5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -26.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556405433606408, guid: 94e72ca597d7d7a4bbcfa03a40743cc5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556405433606408, guid: 94e72ca597d7d7a4bbcfa03a40743cc5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556405433606408, guid: 94e72ca597d7d7a4bbcfa03a40743cc5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556405433606408, guid: 94e72ca597d7d7a4bbcfa03a40743cc5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556405433606408, guid: 94e72ca597d7d7a4bbcfa03a40743cc5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556405433606408, guid: 94e72ca597d7d7a4bbcfa03a40743cc5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556405433606408, guid: 94e72ca597d7d7a4bbcfa03a40743cc5, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 94e72ca597d7d7a4bbcfa03a40743cc5, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &986662706 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4005627764420082, guid: 8b7cd56d9c4cc25469254573e2fd65c2,
