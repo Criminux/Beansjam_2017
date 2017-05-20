@@ -106,13 +106,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackingObject: {fileID: 0}
-  distance: 50
+  distance: 45
   rotationSpeed: 500
-  verticalOffset: 15.2
-  horizontalOffset: 16.4
-  roll: 1.6
-  pitch: -2
-  yaw: 2.9
+  verticalOffset: 12
+  horizontalOffset: 15
+  roll: 3
+  pitch: 3
+  yaw: -1.5
 --- !u!124 &124635634559117224
 Behaviour:
   m_ObjectHideFlags: 1
