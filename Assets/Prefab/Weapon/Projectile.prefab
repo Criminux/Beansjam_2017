@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  lifetime: 10
 --- !u!135 &135395289728808690
 SphereCollider:
   m_ObjectHideFlags: 1
