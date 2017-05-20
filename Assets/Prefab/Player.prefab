@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1841355714676400}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0, z: 0.5083}
+  m_LocalPosition: {x: -0.01, y: 0, z: 0.58}
   m_LocalScale: {x: 2, y: 2, z: 0.33333334}
   m_Children: []
   m_Father: {fileID: 4871265088561126}
@@ -126,7 +126,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1643297038369088}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0, z: 0.5083}
+  m_LocalPosition: {x: -0.01, y: 0, z: 0.573}
   m_LocalScale: {x: 2, y: 2, z: 0.33333334}
   m_Children: []
   m_Father: {fileID: 4955871443790048}
@@ -455,6 +455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 1232926923755396, guid: b45725930ee5d744b8087a8b58452c32, type: 2}
   projectileSpawn: {fileID: 4352173875686792}
+  shotCooldown: 0.1
 --- !u!114 &114725960139391664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -479,3 +480,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 1232926923755396, guid: b45725930ee5d744b8087a8b58452c32, type: 2}
   projectileSpawn: {fileID: 4091770031449172}
+  shotCooldown: 0.5
