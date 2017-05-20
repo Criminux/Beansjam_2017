@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.AccessControl;
 using UnityEngine;
 
 
@@ -23,6 +24,12 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Camera
 
 		[SerializeField]
 		private float horizontalOffset;
+
+		[SerializeField] private float roll;
+
+		[SerializeField] private float pitch;
+
+		[SerializeField] private float yaw;
 		
 		
 		void LateUpdate()
@@ -32,7 +39,9 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Camera
 			var horizontalOffsetVector = trackingObject.transform.right * horizontalOffset;
 			transform.position = behingTrackingObjectByDistance + verticalOffsetVector + horizontalOffsetVector;
 
-			transform.rotation = Quaternion.RotateTowards(transform.rotation, trackingObject.transform.rotation, rotationSpeed * Time.deltaTime);
+			var targetRotation = Quaternion.Euler(trackingObject.transform.rotation.eulerAngles + new Vector3(pitch, yaw, roll));
+
+			transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 			
 		}
 	}

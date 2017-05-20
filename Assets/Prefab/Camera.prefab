@@ -108,8 +108,11 @@ MonoBehaviour:
   trackingObject: {fileID: 0}
   distance: 50
   rotationSpeed: 500
-  verticalOffset: 12.5
-  horizontalOffset: 14
+  verticalOffset: 15.2
+  horizontalOffset: 16.4
+  roll: 1.6
+  pitch: -2
+  yaw: 2.9
 --- !u!124 &124635634559117224
 Behaviour:
   m_ObjectHideFlags: 1
