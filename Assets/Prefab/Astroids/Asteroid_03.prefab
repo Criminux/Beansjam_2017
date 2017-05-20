@@ -9,52 +9,54 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1019960049119414}
+  m_RootGameObject: {fileID: 1977430729236710}
   m_IsPrefabParent: 1
---- !u!1 &1019960049119414
+--- !u!1 &1977430729236710
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4118268477683148}
-  - component: {fileID: 33861574190072614}
-  - component: {fileID: 23500209818103182}
-  - component: {fileID: 114742322464481128}
+  - component: {fileID: 4692781437167628}
+  - component: {fileID: 33647203930289530}
+  - component: {fileID: 23717450230801966}
+  - component: {fileID: 64645892785074224}
+  - component: {fileID: 114498798994511088}
   m_Layer: 0
-  m_Name: AsteroidSpawner
+  m_Name: Asteroid_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4118268477683148
+--- !u!4 &4692781437167628
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1019960049119414}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 1977430729236710}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1000, y: 1000, z: 1000}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23500209818103182
+--- !u!23 &23717450230801966
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1019960049119414}
+  m_GameObject: {fileID: 1977430729236710}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_MotionVectors: 2
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_Materials: []
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: fdcdd5c1489afbb4ea13c261eeffcdf4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -73,29 +75,41 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33861574190072614
+--- !u!33 &33647203930289530
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1019960049119414}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114742322464481128
+  m_GameObject: {fileID: 1977430729236710}
+  m_Mesh: {fileID: 4300000, guid: d6fc60c85f7860043aa518918524a143, type: 3}
+--- !u!64 &64645892785074224
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1977430729236710}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: d6fc60c85f7860043aa518918524a143, type: 3}
+--- !u!114 &114498798994511088
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1019960049119414}
+  m_GameObject: {fileID: 1977430729236710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44670d4d47b062749a43302a84ad5033, type: 3}
+  m_Script: {fileID: 11500000, guid: 4343f74911f0b6f4ab8e55e206cb48af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidPrefabs:
-  - {fileID: 1877516141717032, guid: f043630b23781ee4999d31d6815b7947, type: 2}
-  - {fileID: 1304352501927266, guid: 2e535272ab14d4445a2f9275f7052256, type: 2}
-  - {fileID: 1977430729236710, guid: 81118f3b994a33f46905e5cc63a3ac7f, type: 2}
-  - {fileID: 1209657624932768, guid: 3d0649830d401b74cb1ebe9f71de14a3, type: 2}
-  - {fileID: 1307976572129440, guid: fc540215dff35a84bb7b30a5cc29bdee, type: 2}
-  count: 1000
-  seed: 51
+  rotationSpeedX: 0
+  rotationSpeedY: 0.3
+  rotationSpeedZ: 0
+  rotateX: 0
+  rotateY: 1
+  rotateZ: 0
