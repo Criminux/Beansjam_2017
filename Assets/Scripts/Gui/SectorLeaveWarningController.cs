@@ -11,14 +11,15 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 {
 	public class SectorLeaveWarningController : MonoBehaviour
 	{
-		private const float FadingDuration_seconds = 1.0f;
+		[SerializeField]
+		private float FadingDuration_seconds = 1.0f;
 
 		private Text text;
-
-		// Use this for initialization
+		
 		void Start()
 		{
 			text = GetComponent<Text>();
+			text.CrossFadeAlpha(0, 0, true);
 
 			var player = GameObject.FindGameObjectWithTag(Tags.Player);
 			var areaCheck = player.GetComponent<AreaCheck>();
