@@ -558,6 +558,8 @@ GameObject:
   - component: {fileID: 1773299107}
   - component: {fileID: 1773299108}
   - component: {fileID: 1773299109}
+  - component: {fileID: 1773299110}
+  - component: {fileID: 1773299111}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -705,6 +707,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthDecreasePerSecond: 20
+--- !u!114 &1773299110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1773299100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb599870fb2a4364f915b06dda152565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialMoney: 100
+  initialCrew: 3
+--- !u!114 &1773299111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1773299100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154faab19fd319f4a9e38263b9410c95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialFuel: 10
+  initialAmmo: 25
 --- !u!1 &1814514053
 GameObject:
   m_ObjectHideFlags: 0
