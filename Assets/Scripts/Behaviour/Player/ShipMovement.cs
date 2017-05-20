@@ -8,7 +8,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 	/// <summary>
 	/// See https://en.wikipedia.org/wiki/File:Flight_dynamics_with_text.png.
 	/// </summary>
-	public class PlayerMovement : MonoBehaviour
+	public class ShipMovement : MonoBehaviour
 	{
 		/// <summary>
 		/// The minimum forward speed. Should be negative.
@@ -82,40 +82,37 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 		public float PitchSpeed { get; private set; }
 
 		private Rigidbody body;
+		private InputProvider inputProvider;
 
 		void Start()
 		{
 			body = GetComponent<Rigidbody>();
+			inputProvider = GetComponent<InputProvider>();
 		}
 		
 		void FixedUpdate()
 		{
-			UpdateForwardSpeed();
-			UpdateRollSpeed();
-			UpdateYawSpeed();
-			UpdatePitchSpeed();
+			UpdateForwardSpeed(Mathf.Clamp(inputProvider.GetForwardInput(), -1, 1));
+			UpdateRollSpeed(Mathf.Clamp(inputProvider.GetRollInput(), -1, 1));
+			UpdateYawSpeed(Mathf.Clamp(inputProvider.GetYawInput(), -1, 1));
+			UpdatePitchSpeed(Mathf.Clamp(inputProvider.GetPitchInput(), -1, 1));
 
 			body.velocity = transform.forward * ForwardSpeed;
-			Debug.Log("Velocity: " + body.velocity);
-
 			transform.Rotate(PitchSpeed, YawSpeed, RollSpeed);
 		}
 
-		private void UpdateForwardSpeed()
+		private void UpdateForwardSpeed(float input)
 		{
-			var forwardInput = Input.GetAxis(Constants.Input.AxisForward);
-
-			var forwardAddition = forwardInput < 0.0f
-				? forwardInput * forwardDeceleration * Time.deltaTime
-				: forwardInput * forwardAcceleration * Time.deltaTime;
+			var forwardAddition = input < 0.0f
+				? input * forwardDeceleration * Time.deltaTime
+				: input * forwardAcceleration * Time.deltaTime;
 
 			ForwardSpeed = Mathf.Clamp(ForwardSpeed + forwardAddition, minForwardSpeed, maxForwardSpeed);
 		}
 
-		private void UpdateRollSpeed()
+		private void UpdateRollSpeed(float input)
 		{
-			var rollInput = Input.GetAxis(Constants.Input.AxisRoll);
-			var rollAddition = rollInput * rollAcceleration * Time.deltaTime;
+			var rollAddition = input * rollAcceleration * Time.deltaTime;
 
 			var updatedRollSpeed = RollSpeed;
 			updatedRollSpeed = Mathf.Clamp(updatedRollSpeed + rollAddition, -maxRollSpeed, maxRollSpeed);
@@ -123,10 +120,9 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 			RollSpeed = updatedRollSpeed;
 		}
 
-		private void UpdateYawSpeed()
+		private void UpdateYawSpeed(float input)
 		{
-			var yawInput = Input.GetAxis(Constants.Input.AxisMouseX);
-			var yawAddition = yawInput * yawAcceleration * Time.deltaTime;
+			var yawAddition = input * yawAcceleration * Time.deltaTime;
 
 			var updatedYawSpeed = YawSpeed;
 			updatedYawSpeed = Mathf.Clamp(updatedYawSpeed + yawAddition, -maxYawSpeed, maxYawSpeed);
@@ -134,15 +130,22 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 			YawSpeed = updatedYawSpeed;
 		}
 
-		private void UpdatePitchSpeed()
+		private void UpdatePitchSpeed(float input)
 		{
-			var pitchInput = Input.GetAxis(Constants.Input.AxisMouseY);
-			var pitchAddition = pitchInput * pitchAcceleration * Time.deltaTime;
+			var pitchAddition = input * pitchAcceleration * Time.deltaTime;
 
 			var updatedPitchSpeed = PitchSpeed;
 			updatedPitchSpeed = Mathf.Clamp(updatedPitchSpeed + pitchAddition, -maxPitchSpeed, maxPitchSpeed);
 			updatedPitchSpeed = Mathf.MoveTowards(updatedPitchSpeed, 0.0f, Time.deltaTime * pitchDecelration);
 			PitchSpeed = updatedPitchSpeed;
+		}
+
+		public interface InputProvider
+		{
+			float GetForwardInput();
+			float GetRollInput();
+			float GetYawInput();
+			float GetPitchInput();
 		}
 	}
 }

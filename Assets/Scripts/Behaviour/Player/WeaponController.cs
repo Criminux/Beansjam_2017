@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 {
-	public class WeaponScript : MonoBehaviour
+	public class WeaponController : MonoBehaviour
 	{
 
 		[SerializeField] GameObject projectile;
