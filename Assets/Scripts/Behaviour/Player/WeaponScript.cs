@@ -9,19 +9,23 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 
 		[SerializeField] GameObject projectile;
 		[SerializeField] Transform projectileSpawn;
-		GameObject Player;
+		GameObject player;
 
         [SerializeField]
         float shotCooldown;
         float cooldownTimer = 0;
 
+        private PlayerShotSoundController soundcontroller;
+
         bool canShoot;
 
 		private void Start()
 		{
-			Player = GameObject.FindGameObjectWithTag("Player");
+			player = GameObject.FindGameObjectWithTag("Player");
             canShoot = true;
-		}
+            soundcontroller = player.GetComponent<PlayerShotSoundController>();
+
+        }
 
         private void Update()
         {
@@ -40,8 +44,9 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 		{
             if(canShoot)
             {
-			    Instantiate(projectile, projectileSpawn.position, Player.transform.rotation);
+			    Instantiate(projectile, projectileSpawn.position, player.transform.rotation);
                 cooldownTimer = shotCooldown;
+                soundcontroller.PlayOneShot();
             }
 		}
 
