@@ -10,6 +10,9 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 	{
 		private Projectile projectile;
 
+		[SerializeField] private GameObject particle;
+		[SerializeField] private float particleDuration =.2f;
+
 		void Start()
 		{
 			projectile = GetComponent<Projectile>();
@@ -17,11 +20,13 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 
 		void OnCollisionEnter(Collision collision)
 		{
-			Debug.Log("Blubb");
-
 			var hitListener = collision.gameObject.GetComponent<ProjectileHitListener>();
 			if(hitListener != null)
 				hitListener.Hit(projectile.Impact);
+
+			var particleInstance = Instantiate(particle, transform.position, transform.rotation);
+			Destroy(particleInstance, particleDuration);
+			Destroy(gameObject);
 		}
 	}
 }
