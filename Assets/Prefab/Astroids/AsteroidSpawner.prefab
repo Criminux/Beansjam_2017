@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019960049119414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 109.3, y: 0, z: 88.9}
-  m_LocalScale: {x: 200, y: 200, z: 200}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1000, y: 1000, z: 1000}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -92,8 +92,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidPrefabs:
-  - {fileID: 1462803684945484, guid: 9d579ad15e7eedf408cacbea0b51c111, type: 2}
-  - {fileID: 1882638714314998, guid: 91149e2b73ac3fc478abe1c5c8ce4601, type: 2}
-  - {fileID: 1113988847391324, guid: 1b09cf6fdbd5d6f4cac325aea0970140, type: 2}
-  count: 30
+  - {fileID: 1877516141717032, guid: f043630b23781ee4999d31d6815b7947, type: 2}
+  - {fileID: 1304352501927266, guid: 2e535272ab14d4445a2f9275f7052256, type: 2}
+  - {fileID: 1977430729236710, guid: 81118f3b994a33f46905e5cc63a3ac7f, type: 2}
+  - {fileID: 1209657624932768, guid: 3d0649830d401b74cb1ebe9f71de14a3, type: 2}
+  - {fileID: 1307976572129440, guid: fc540215dff35a84bb7b30a5cc29bdee, type: 2}
+  count: 1000
   seed: 51

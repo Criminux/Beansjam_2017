@@ -11,14 +11,38 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 		[SerializeField] Transform projectileSpawn;
 		GameObject Player;
 
+        [SerializeField]
+        float shotCooldown;
+        float cooldownTimer = 0;
+
+        bool canShoot;
+
 		private void Start()
 		{
 			Player = GameObject.FindGameObjectWithTag("Player");
+            canShoot = true;
 		}
 
-		public void Shoot()
+        private void Update()
+        {
+            if(cooldownTimer > 0)
+            {
+                cooldownTimer -= Time.deltaTime;
+                canShoot = false;
+            }
+            else
+            {
+                canShoot = true;
+            }
+        }
+
+        public void Shoot()
 		{
-			Instantiate(projectile, projectileSpawn.position, Player.transform.rotation);
+            if(canShoot)
+            {
+			    Instantiate(projectile, projectileSpawn.position, Player.transform.rotation);
+                cooldownTimer = shotCooldown;
+            }
 		}
 
 	}
