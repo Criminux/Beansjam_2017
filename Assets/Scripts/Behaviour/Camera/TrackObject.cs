@@ -20,13 +20,17 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Camera
 
 		[SerializeField]
 		private float verticalOffset;
+
+		[SerializeField]
+		private float horizontalOffset;
 		
 		
 		void LateUpdate()
 		{
 			var behingTrackingObjectByDistance = trackingObject.transform.position + (trackingObject.transform.forward * -1 * distance);
 			var verticalOffsetVector = trackingObject.transform.up * verticalOffset;
-			transform.position = behingTrackingObjectByDistance + verticalOffsetVector;
+			var horizontalOffsetVector = trackingObject.transform.right * horizontalOffset;
+			transform.position = behingTrackingObjectByDistance + verticalOffsetVector + horizontalOffsetVector;
 
 			transform.rotation = Quaternion.RotateTowards(transform.rotation, trackingObject.transform.rotation, rotationSpeed * Time.deltaTime);
 			
