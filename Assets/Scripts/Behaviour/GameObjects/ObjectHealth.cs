@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
+namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects
 {
 	public class ObjectHealth : MonoBehaviour
 	{

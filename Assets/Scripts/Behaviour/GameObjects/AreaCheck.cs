@@ -3,7 +3,7 @@ using System;
 using GloriousWhale.BeansJam17.Assets.Scripts.Constants;
 using UnityEngine;
 
-namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player {
+namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects {
 	
 	public class AreaCheck : MonoBehaviour
 	{

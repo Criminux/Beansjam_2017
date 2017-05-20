@@ -5,7 +5,7 @@ using System.Text;
 using GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player;
 using UnityEngine;
 
-namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
+namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 {
 	public class PlayerController : MonoBehaviour, ShipMovement.InputProvider, ShipShooting.InputProvider
 	{

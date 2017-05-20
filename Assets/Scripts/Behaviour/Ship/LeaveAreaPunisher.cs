@@ -2,9 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using GloriousWhale.BeansJam17.Assets.Scripts.Behaviour;
+using GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects;
 using UnityEngine;
 
-namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
+namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 {
 
 	public class LeaveAreaPunisher : MonoBehaviour

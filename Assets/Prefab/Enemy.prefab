@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd88905a9a6eb24459f713682798339e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorSound: {fileID: 82306080852714094}
+  engineSoundSource: {fileID: 82306080852714094}
   pitchDivisor: 20
 --- !u!114 &114663692622799116
 MonoBehaviour:
@@ -516,6 +516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeaec0ba42af96e47ada44721be81a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceToKeep: 0
 --- !u!114 &114754708701851108
 MonoBehaviour:
   m_ObjectHideFlags: 1

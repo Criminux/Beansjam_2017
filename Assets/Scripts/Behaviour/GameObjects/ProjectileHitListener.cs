@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Assets.Scripts.Behaviour.Player
+namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects
 {
 	public abstract class ProjectileHitListener : MonoBehaviour
 	{

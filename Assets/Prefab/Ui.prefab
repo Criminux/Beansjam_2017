@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4814383393086574}
   m_Layer: 0
-  m_Name: UI
+  m_Name: Ui
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -382,6 +382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d7038b9dcc8be4b9daae1404275a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body: {fileID: 0}
+  trans: {fileID: 0}
   multi: 5
 --- !u!114 &114821839178740950
 MonoBehaviour:

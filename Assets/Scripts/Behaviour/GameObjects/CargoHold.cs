@@ -4,7 +4,7 @@ using Assets.Scripts.Constants;
 using UnityEngine;
 
 
-namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
+namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects
 {
 	public class CargoHold : MonoBehaviour
 	{
