@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 {
-	public class EnemyController : MonoBehaviour
+	public class EnemyController : MonoBehaviour, ShipMovement.InputProvider, ShipShooting.InputProvider
 	{
 
 		[SerializeField]
@@ -37,14 +37,31 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
             {
                 transform.position += transform.forward * speed;
             }
-            else
-            {
-                foreach(WeaponController weapon in weapons)
-                {
-                    weapon.Shoot();
-                }
-            }
         }
 
-    }
+		public float GetForwardInput()
+		{
+			return 0;
+		}
+
+		public float GetRollInput()
+		{
+			return 0;
+		}
+
+		public float GetYawInput()
+		{
+			return 0;
+		}
+
+		public float GetPitchInput()
+		{
+			return 0;
+		}
+
+		public bool GetShootingInput()
+		{
+			return Vector3.Distance(transform.position, playerTransform.position) <= distanceToKeep;
+		}
+	}
 }
