@@ -15,32 +15,65 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour
 		/// </summary>
 		[SerializeField] private float minForwardSpeed;
 
+		/// <summary>
+		/// The maximum forward speed. Should be positive and way larger than <see cref="minForwardSpeed"/>.
+		/// </summary>
 		[SerializeField] private float maxForwardSpeed;
 
+		/// <summary>
+		/// How fast forward speed should decrease when receiving negative input.
+		/// </summary>
 		[SerializeField] private float forwardDeceleration;
 
+		/// <summary>
+		/// How fast forward speed should increase when receiving positive input. Should be positive since it gets multiplied with the negative input.
+		/// </summary>
 		[SerializeField] private float forwardAcceleration;
 
 		/// <summary>
-		/// The maximum roll speed in both directions.
+		/// The maximum roll speed in both directions.  Will not be reached because of <see cref="rollDecelration"/>.
 		/// </summary>
 		[SerializeField] private float maxRollSpeed;
 
+		/// <summary>
+		/// How fast the roll should increase when receiving input. 
+		/// </summary>
 		[SerializeField] private float rollAcceleration;
 
 		/// <summary>
-		/// The maximum yaw speed in both directions.
+		/// How fast the pitch should automatically decelerate.
+		/// </summary>
+		[SerializeField] private float rollDecelration;
+
+		/// <summary>
+		/// The maximum yaw speed in both directions. Will not be reached because of <see cref="yawDecelration"/>.
 		/// </summary>
 		[SerializeField] private float maxYawSpeed;
 
+		/// <summary>
+		/// How fast the yaw should increase when receiving input.
+		/// </summary>
 		[SerializeField] private float yawAcceleration;
 
 		/// <summary>
-		/// The maximum pitch speed in both directions.
+		/// How fast the pitch should automatically decelerate.
+		/// </summary>
+		[SerializeField] private float yawDecelration;
+
+		/// <summary>
+		/// The maximum pitch speed in both directions. Will not be reached because of <see cref="pitchDecelration"/>.
 		/// </summary>
 		[SerializeField] private float maxPitchSpeed;
 
+		/// <summary>
+		/// How fast the pitch should increase when receiving input.
+		/// </summary>
 		[SerializeField] private float pitchAcceleration;
+
+		/// <summary>
+		/// How fast the pitch should automatically decelerate.
+		/// </summary>
+		[SerializeField] private float pitchDecelration;
 
 
 		public float ForwardSpeed { get; private set; }
@@ -54,8 +87,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour
 		{
 			rigidbody = GetComponent<Rigidbody>();
 		}
-
-		// Update is called once per frame
+		
 		void FixedUpdate()
 		{
 			UpdateForwardSpeed();
@@ -84,21 +116,33 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour
 		{
 			var rollInput = Input.GetAxis(Constants.Input.AxisRoll);
 			var rollAddition = rollInput * rollAcceleration * Time.deltaTime;
-			RollSpeed = Mathf.Clamp(RollSpeed + rollAddition, -maxRollSpeed, maxRollSpeed);
+
+			var updatedRollSpeed = RollSpeed;
+			updatedRollSpeed = Mathf.Clamp(updatedRollSpeed + rollAddition, -maxRollSpeed, maxRollSpeed);
+			updatedRollSpeed = Mathf.MoveTowards(updatedRollSpeed, 0.0f, Time.deltaTime * rollDecelration);
+			RollSpeed = updatedRollSpeed;
 		}
 
 		private void UpdateYawSpeed()
 		{
 			var yawInput = Input.GetAxis(Constants.Input.AxisMouseX);
 			var yawAddition = yawInput * yawAcceleration * Time.deltaTime;
-			YawSpeed = Mathf.Clamp(YawSpeed + yawAddition, -maxYawSpeed, maxYawSpeed);
+
+			var updatedYawSpeed = YawSpeed;
+			updatedYawSpeed = Mathf.Clamp(updatedYawSpeed + yawAddition, -maxYawSpeed, maxYawSpeed);
+			updatedYawSpeed = Mathf.MoveTowards(updatedYawSpeed, 0.0f, Time.deltaTime * yawDecelration);
+			YawSpeed = updatedYawSpeed;
 		}
 
 		private void UpdatePitchSpeed()
 		{
 			var pitchInput = Input.GetAxis(Constants.Input.AxisMouseY);
 			var pitchAddition = pitchInput * pitchAcceleration * Time.deltaTime;
-			PitchSpeed = Mathf.Clamp(PitchSpeed + pitchAddition, -maxPitchSpeed, maxPitchSpeed);
+
+			var updatedPitchSpeed = PitchSpeed;
+			updatedPitchSpeed = Mathf.Clamp(updatedPitchSpeed + pitchAddition, -maxPitchSpeed, maxPitchSpeed);
+			updatedPitchSpeed = Mathf.MoveTowards(updatedPitchSpeed, 0.0f, Time.deltaTime * pitchDecelration);
+			PitchSpeed = updatedPitchSpeed;
 		}
 	}
 }

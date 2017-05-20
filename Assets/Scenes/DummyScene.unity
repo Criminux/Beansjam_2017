@@ -561,15 +561,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minForwardSpeed: -20
-  maxForwardSpeed: 10
-  forwardDeceleration: 5
-  forwardAcceleration: 10
+  maxForwardSpeed: 30
+  forwardDeceleration: 20
+  forwardAcceleration: 30
   maxRollSpeed: 1.4
   rollAcceleration: 50
-  maxYawSpeed: 1.2
+  rollDecelration: 3
+  maxYawSpeed: 3
   yawAcceleration: 50
+  yawDecelration: 3
   maxPitchSpeed: 1.2
   pitchAcceleration: 50
+  pitchDecelration: 3
 --- !u!23 &1773299102
 MeshRenderer:
   m_ObjectHideFlags: 0
