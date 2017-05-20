@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player;
 using GloriousWhale.BeansJam17.Assets.Scripts.Constants;
 using UnityEngine;
 
@@ -9,22 +10,25 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 	public class UiThrustMaskController : MonoBehaviour
 	{
 
-		Rigidbody body;
-		RectTransform trans;
+		private ShipMovement shipMovement;
 
-		[SerializeField] float multi = 7.1f;
+		Rigidbody body;
+		RectTransform rectTransform;
+		
+		private float originalHeight;
 
 		void Start()
 		{
-			body = GameObject.FindGameObjectWithTag(Tags.Player).GetComponent<Rigidbody>();
-			trans = GetComponent<RectTransform>();
+			shipMovement = GameObject.FindGameObjectWithTag(Tags.Player).GetComponent<ShipMovement>();
+			rectTransform = GetComponent<RectTransform>();
+
+			originalHeight = rectTransform.rect.height;
 		}
 
 		void Update()
 		{
-			float relativeThrust = body.velocity.magnitude * multi;
-			float top = (1070f - relativeThrust);
-			trans.offsetMax = new Vector2(trans.offsetMax.x, -top);
+			float relativeThrust = Mathf.Clamp01(Mathf.Abs(shipMovement.ForwardSpeed /shipMovement.MaxForwardSpeed));
+			rectTransform.sizeDelta = new Vector2(rectTransform.rect.width,originalHeight * relativeThrust);
 		}
 	}
 }
