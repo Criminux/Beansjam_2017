@@ -427,6 +427,7 @@ MonoBehaviour:
   maxForwardSpeed: 30
   forwardDeceleration: 20
   forwardAcceleration: 30
+  forwardAccelerationSpeed: 50
   maxRollSpeed: 1.4
   rollAcceleration: 50
   rollDecelration: 3
@@ -436,6 +437,8 @@ MonoBehaviour:
   maxPitchSpeed: 1.2
   pitchAcceleration: 50
   pitchDecelration: 3
+  collisionKnockback: 20
+  demageOnCollision: 10
 --- !u!114 &114057552599904724
 MonoBehaviour:
   m_ObjectHideFlags: 1
