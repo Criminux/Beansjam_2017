@@ -23,6 +23,9 @@ GameObject:
   - component: {fileID: 23347285915973800}
   - component: {fileID: 64159874497473282}
   - component: {fileID: 114205786342284002}
+  - component: {fileID: 114369181951177616}
+  - component: {fileID: 114686885901491930}
+  - component: {fileID: 114609532261372562}
   m_Layer: 0
   m_Name: Asteroid_05
   m_TagString: Untagged
@@ -92,9 +95,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
+  m_Convex: 1
+  m_InflateMesh: 1
+  m_SkinWidth: 0.23
   m_Mesh: {fileID: 4300000, guid: 39fc46cbf458d1e42890bf3a101b90f1, type: 3}
 --- !u!114 &114205786342284002
 MonoBehaviour:
@@ -110,3 +113,40 @@ MonoBehaviour:
   rotationSpeedX: 5
   rotationSpeedY: 1
   rotationSpeedZ: 2
+--- !u!114 &114369181951177616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1307976572129440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a447163bd700e42a5564ee19e2ba9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  demagePerImpact: 5
+--- !u!114 &114609532261372562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1307976572129440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855604bf69050b449b3a5810b15a60ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 20
+  initialShield: 0
+  shieldRegenerationPerSecond: 0
+--- !u!114 &114686885901491930
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1307976572129440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5056fcd33b48814d9a9483c8aabbe30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

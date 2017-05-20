@@ -23,6 +23,9 @@ GameObject:
   - component: {fileID: 23037104290387776}
   - component: {fileID: 64696257456040354}
   - component: {fileID: 114919221898079872}
+  - component: {fileID: 114835534766702226}
+  - component: {fileID: 114768326324436762}
+  - component: {fileID: 114335747643896166}
   m_Layer: 0
   m_Name: Asteroid_02
   m_TagString: Untagged
@@ -92,10 +95,47 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
+  m_Convex: 1
+  m_InflateMesh: 1
+  m_SkinWidth: 0.35
   m_Mesh: {fileID: 4300000, guid: 524203187e6327142a049ef0f23d69c2, type: 3}
+--- !u!114 &114335747643896166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304352501927266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855604bf69050b449b3a5810b15a60ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 20
+  initialShield: 0
+  shieldRegenerationPerSecond: 0
+--- !u!114 &114768326324436762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304352501927266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5056fcd33b48814d9a9483c8aabbe30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114835534766702226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304352501927266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a447163bd700e42a5564ee19e2ba9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  demagePerImpact: 5
 --- !u!114 &114919221898079872
 MonoBehaviour:
   m_ObjectHideFlags: 1

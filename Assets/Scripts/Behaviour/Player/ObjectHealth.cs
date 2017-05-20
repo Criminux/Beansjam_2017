@@ -35,7 +35,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 				var oldHealth = _health;
 				_health = value;
 				if(!Mathf.Approximately(value, oldHealth) && HealthChanged != null) HealthChanged(oldHealth, value);
-				if (_health >= 0.0f && HealthReachedZero != null) HealthReachedZero();
+				if (_health <= 0.0f && HealthReachedZero != null) HealthReachedZero();
 			}
 		}
 

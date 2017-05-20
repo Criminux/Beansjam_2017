@@ -7,7 +7,8 @@ public class AsteroidDestruction : MonoBehaviour {
 	
 	void Start ()
 	{
-		GetComponent<ObjectHealth>().HealthReachedZero += () => Destroy(gameObject);
+		GetComponent<ObjectHealth>().HealthReachedZero += () => 
+		Destroy(gameObject);
 	}
 	
 }
