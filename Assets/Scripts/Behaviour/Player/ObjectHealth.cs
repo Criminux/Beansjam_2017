@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 {
-	public class PlayerHealth : MonoBehaviour
+	public class ObjectHealth : MonoBehaviour
 	{
 
 		/// <summary>
@@ -62,9 +62,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 				newShield = 0;
 				newHealth += shieldUnderflow;
 			}
-
-			Debug.Log(string.Format("Player demaged. New health: {0}; New shield: {1}", newHealth, newShield));
-
+			
 			Shield = newShield;
 			Health = newHealth;
 		}
@@ -73,7 +71,6 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 		{
 			var newShieldValue = Shield + (shieldRegenerationPerSecond * Time.deltaTime);
 			Shield = Mathf.Min(initialShield, newShieldValue);
-			Debug.Log(string.Format("Shield regenerated. Theretical new value: {0}; Actual new value: {1}", newShieldValue, Shield));
 		}
 
 		public delegate void HealthReachedZeroHandler();

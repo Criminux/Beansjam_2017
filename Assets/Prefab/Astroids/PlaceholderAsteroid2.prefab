@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 136444414906669186}
   - component: {fileID: 23191651217915890}
   - component: {fileID: 114853182347567954}
+  - component: {fileID: 114856122625454564}
+  - component: {fileID: 114961933604296036}
   m_Layer: 0
   m_Name: PlaceholderAsteroid2
   m_TagString: Untagged
@@ -90,15 +92,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 1882638714314998}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4343f74911f0b6f4ab8e55e206cb48af, type: 3}
+  m_Script: {fileID: 11500000, guid: 2279d7e82623dd1479ded137fbba01d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeedX: 1
   rotationSpeedY: 2
   rotationSpeedZ: 2
-  rotateX: 1
-  rotateY: 1
-  rotateZ: 1
+--- !u!114 &114856122625454564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1882638714314998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855604bf69050b449b3a5810b15a60ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 20
+  initialShield: 0
+  shieldRegenerationPerSecond: 0
+--- !u!114 &114961933604296036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1882638714314998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a447163bd700e42a5564ee19e2ba9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  demagePerImpact: 5
 --- !u!136 &136444414906669186
 CapsuleCollider:
   m_ObjectHideFlags: 1

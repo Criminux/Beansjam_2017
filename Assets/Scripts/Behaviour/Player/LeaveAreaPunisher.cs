@@ -11,12 +11,12 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 	{
 		[SerializeField] private float healthDecreasePerSecond;
 
-		private PlayerHealth playerHealth;
+		private ObjectHealth _objectHealth;
 		private bool isPunishing;
 
 		void Start()
 		{
-			playerHealth = GetComponent<PlayerHealth>();
+			_objectHealth = GetComponent<ObjectHealth>();
 			var areaCheck = GetComponent<AreaCheck>();
 			areaCheck.LeftWarningArea += () => isPunishing = true;
 			areaCheck.ReenteredWarningArea += () => isPunishing = false;
@@ -25,7 +25,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 		void Update()
 		{
 			if(isPunishing)
-				playerHealth.Demage(healthDecreasePerSecond * Time.deltaTime);
+				_objectHealth.Demage(healthDecreasePerSecond * Time.deltaTime);
 		}
 	}
 }

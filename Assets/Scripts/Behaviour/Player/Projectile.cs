@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts.Behaviour.Player;
 using UnityEngine;
 
 
@@ -11,6 +12,13 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 		[SerializeField] float speed;
 
 		[SerializeField] float lifetime;
+
+		[SerializeField] float impact = ProjectileHitListener.InpactWeak;
+
+		public float Impact
+		{
+			get { return impact; }
+		}
 
 		void Update()
 		{

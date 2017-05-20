@@ -20,7 +20,7 @@ public class DemageIndicatorController : MonoBehaviour
 		image.CrossFadeAlpha(0, 0, true);
 
 		var player = GameObject.FindGameObjectWithTag(Tags.Player);
-		var playerHealth = player.GetComponent<PlayerHealth>();
+		var playerHealth = player.GetComponent<ObjectHealth>();
 
 		playerHealth.HealthChanged += (oldHealth, newHealth) =>
 		{
