@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackingObject: {fileID: 0}
-  distance: 45
+  distance: 35
   rotationSpeed: 500
   verticalOffset: 12
   horizontalOffset: 15
