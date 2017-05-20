@@ -15,11 +15,11 @@ EditorBuildSettings:
     path: Assets/_Scenes/Options Menu.unity
     guid: dd017c84964ba9f4899cdbd37fc11faa
   - enabled: 1
-    path: Assets/Scenes/DummyScene.unity
+    path: Assets/_Scenes/DummyScene.unity
     guid: 369c9d95158f5214fb758ba086bab22e
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Win Screen.unity
     guid: bd00eb10c82375b48b105bebe84167f8
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Lose Screen.unity
     guid: b5bc7c0ca0b9e7b4cb76b24535ddc255
