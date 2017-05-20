@@ -94,8 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeedX: 1
-  rotationSpeedY: 5
-  rotationSpeedZ: 7
+  rotationSpeedY: 2
+  rotationSpeedZ: 2
   rotateX: 1
   rotateY: 1
   rotateZ: 1
