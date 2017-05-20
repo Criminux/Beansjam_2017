@@ -7,6 +7,7 @@ TagManager:
   - LegalArea
   - WarningArea
   - Enemy
+  - AsteroidPickUp
   layers:
   - Default
   - TransparentFX

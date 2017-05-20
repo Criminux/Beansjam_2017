@@ -92,6 +92,11 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 		private InputProvider inputProvider;
 		private ObjectHealth objectHealth;
 
+		public float MaxForwardSpeed
+		{
+			get { return maxForwardSpeed; }
+		}
+
 		void Start()
 		{
 			body = GetComponent<Rigidbody>();
