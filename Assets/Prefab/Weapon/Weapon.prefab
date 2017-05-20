@@ -136,3 +136,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 1232926923755396, guid: b45725930ee5d744b8087a8b58452c32, type: 2}
   projectileSpawn: {fileID: 4097150560909468}
+  shotCooldown: 0.1
