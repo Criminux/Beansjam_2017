@@ -59,7 +59,9 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 			var positionDelta = AttackingObject.transform.position - transform.position;
 			var targetRotation = Quaternion.LookRotation(positionDelta, Vector3.forward);
 
-			return targetRotation.eulerAngles - transform.rotation.eulerAngles;
+			var rotationDeltaToAttackingObject = targetRotation.eulerAngles - transform.rotation.eulerAngles;
+			Debug.Log(rotationDeltaToAttackingObject);
+			return rotationDeltaToAttackingObject;
 		}
 
 		public bool GetShootingInput()

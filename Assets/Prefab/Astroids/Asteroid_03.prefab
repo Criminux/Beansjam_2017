@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114856808154021108}
   - component: {fileID: 114580799454774916}
   - component: {fileID: 114736171690337476}
+  - component: {fileID: 114073288631089134}
   m_Layer: 0
   m_Name: Asteroid_03
   m_TagString: Untagged
@@ -99,6 +100,17 @@ MeshCollider:
   m_InflateMesh: 1
   m_SkinWidth: 0.16
   m_Mesh: {fileID: 4300000, guid: f6f3322017d8da9489366481316be121, type: 3}
+--- !u!114 &114073288631089134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1977430729236710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f27f7a1eed01ac46a231fa73f368825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114498798994511088
 MonoBehaviour:
   m_ObjectHideFlags: 1

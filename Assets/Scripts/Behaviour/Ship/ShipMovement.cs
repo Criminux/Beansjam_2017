@@ -112,8 +112,11 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 
 		void OnCollisionEnter(Collision collision)
 		{
-			ForwardSpeed = -collisionKnockback;
-			objectHealth.Demage(demageOnCollision);
+			if (collision.gameObject.GetComponent<CausesShipKnockback>() != null)
+			{
+				ForwardSpeed = -collisionKnockback;
+				objectHealth.Demage(demageOnCollision);
+			}
 		}
 
 		private void UpdateForwardSpeed(float input)

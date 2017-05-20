@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 82306080852714094}
   - component: {fileID: 114626919137072858}
   - component: {fileID: 114663692622799116}
+  - component: {fileID: 114426822697977058}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -451,6 +452,17 @@ MonoBehaviour:
   initialHealth: 100
   initialShield: 120
   shieldRegenerationPerSecond: 10
+--- !u!114 &114426822697977058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1313843072457408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f27f7a1eed01ac46a231fa73f368825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114505527764115572
 MonoBehaviour:
   m_ObjectHideFlags: 1
