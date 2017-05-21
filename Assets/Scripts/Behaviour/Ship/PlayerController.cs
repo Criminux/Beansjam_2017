@@ -103,6 +103,15 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
                 //    playerProperties.Crew += 1;
                 //}
             }
+            if (other.tag == Tags.Civil && UnityEngine.Input.GetKeyDown(KeyCode.F))
+            {
+                Debug.Log("You're interacting with a Civil");
+                if(other.GetComponent<CivilBehaviour>().HasPaid == false)
+                {
+                    playerProperties.Money += 10;
+                    other.GetComponent<CivilBehaviour>().HasPaid = true;
+                }
+            }
             //TODO: Add more Interactables?
         }
     }
