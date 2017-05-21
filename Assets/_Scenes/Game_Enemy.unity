@@ -517,7 +517,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1313843072457408, guid: 94e72ca597d7d7a4bbcfa03a40743cc5, type: 2}
       propertyPath: m_Name
-      value: Enemy (2)
+      value: Enemy_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 94e72ca597d7d7a4bbcfa03a40743cc5, type: 2}
@@ -563,7 +563,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1313843072457408, guid: 94e72ca597d7d7a4bbcfa03a40743cc5, type: 2}
       propertyPath: m_Name
-      value: Enemy (1)
+      value: Enemy_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 94e72ca597d7d7a4bbcfa03a40743cc5, type: 2}
