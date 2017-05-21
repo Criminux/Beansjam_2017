@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/_Scenes/Options Menu.unity
     guid: dd017c84964ba9f4899cdbd37fc11faa
   - enabled: 1
-    path: Assets/_Scenes/Game_StartScene.unity
+    path: Assets/_Scenes/Game_Start.unity
     guid: 369c9d95158f5214fb758ba086bab22e
   - enabled: 0
     path: Assets/_Scenes/Win Screen.unity
@@ -25,10 +25,13 @@ EditorBuildSettings:
     guid: b5bc7c0ca0b9e7b4cb76b24535ddc255
   - enabled: 1
     path: Assets/_Scenes/Game_Asteroid.unity
-    guid: 00000000000000000000000000000000
+    guid: 293a5282bee13414999961f1ba991bff
   - enabled: 1
     path: Assets/_Scenes/Game_Bar.unity
-    guid: 00000000000000000000000000000000
+    guid: 13fdb8984e9afb54084ed44f28951bb1
   - enabled: 1
     path: Assets/_Scenes/Game_Enemy.unity
+    guid: 5079b58acc2a55b4995e9f6562a545e8
+  - enabled: 1
+    path: Assets/_Scenes/Game_Police.unity
     guid: 00000000000000000000000000000000

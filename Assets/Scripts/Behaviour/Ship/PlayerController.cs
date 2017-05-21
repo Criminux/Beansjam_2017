@@ -12,6 +12,8 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 	public class PlayerController : MonoBehaviour, ShipMovement.InputProvider, ShipShooting.InputProvider
 	{
 
+        PlayerProperties playerProperties;
+
 		public float GetForwardInput()
 		{
 			return UnityEngine.Input.GetAxis(Constants.Input.AxisForward);
@@ -49,7 +51,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
         private void InitiateJump()
         {
             //TODO: Make Countdown
-            int toLoadScene = UnityEngine.Random.Range(1, 4);
+            int toLoadScene = UnityEngine.Random.Range(1, 5);
             
             switch (toLoadScene)
             {
@@ -62,9 +64,31 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
                 case 3:
                     SceneManager.LoadScene(SceneTypes.Game_Enemy);
                     break;
+                case 4:
+                    SceneManager.LoadScene(SceneTypes.Game_Police);
+                    break;
             }
               
             
+        }
+
+        private void Start()
+        {
+            playerProperties = GetComponent<PlayerProperties>();   
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if(other.tag == Tags.Bar && UnityEngine.Input.GetKeyDown(KeyCode.F))
+            {
+                Debug.Log("You're interacting with a Bar");
+                if(playerProperties.Money >= 25)
+                {
+                    playerProperties.Money -= 25;
+                    playerProperties.Crew += 1;
+                }
+            }
+            //TODO: Add more Interactables?
         }
     }
 }
