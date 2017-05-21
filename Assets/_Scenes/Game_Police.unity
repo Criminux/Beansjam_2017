@@ -555,10 +555,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4169146010238116, guid: f41b99975ce987941be8d27c21f0f932, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -144.83801
-      objectReference: {fileID: 0}
     - target: {fileID: 1203547681022542, guid: f41b99975ce987941be8d27c21f0f932, type: 2}
       propertyPath: m_Name
       value: PoliceShip (1)
