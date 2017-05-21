@@ -51,7 +51,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
         private void InitiateJump()
         {
             //TODO: Make Countdown
-            int toLoadScene = UnityEngine.Random.Range(1, 5);
+            int toLoadScene = UnityEngine.Random.Range(1, 7);
             
             switch (toLoadScene)
             {
@@ -66,6 +66,12 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
                     break;
                 case 4:
                     SceneManager.LoadScene(SceneTypes.Game_Police);
+                    break;
+                case 5:
+                    SceneManager.LoadScene(SceneTypes.Game_SpaceStation);
+                    break;
+                case 6:
+                    SceneManager.LoadScene(SceneTypes.Game_Civil);
                     break;
             }
               
@@ -87,6 +93,15 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
                     playerProperties.Money -= 25;
                     playerProperties.Crew += 1;
                 }
+            }
+            if (other.tag == Tags.SpaceStation && UnityEngine.Input.GetKeyDown(KeyCode.F))
+            {
+                Debug.Log("You're interacting with a Station");
+                //if (playerProperties.Money >= 25)
+                //{
+                //    playerProperties.Money -= 25;
+                //    playerProperties.Crew += 1;
+                //}
             }
             //TODO: Add more Interactables?
         }

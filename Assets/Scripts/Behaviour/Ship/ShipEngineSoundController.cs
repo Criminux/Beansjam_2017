@@ -15,12 +15,14 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 
 		Rigidbody body;
 		private ShipMovement shipMovement;
+        
 
 		// Use this for initialization
 		void Start()
 		{
 			body = GetComponent<Rigidbody>();
 			shipMovement = GetComponent<ShipMovement>();
+            
 		}
 
 		// Update is called once per frame
