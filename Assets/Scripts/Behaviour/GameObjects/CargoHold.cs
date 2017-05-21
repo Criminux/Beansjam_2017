@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Assets.Scripts.Constants;
+using GloriousWhale.BeansJam17.Assets.Scripts.Constants;
 using UnityEngine;
 
 
@@ -12,6 +12,12 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects
 		private Dictionary<ItemType, int> content = new Dictionary<ItemType, int>();
 
 		[SerializeField] private int size;
+
+
+		public Dictionary<ItemType, int> Content
+		{
+			get { return content; }
+		}
 
 		public int OccupiedSpace { get; private set; }
 

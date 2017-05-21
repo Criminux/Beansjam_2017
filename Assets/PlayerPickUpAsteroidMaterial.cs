@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Assets.Scripts.Constants;
 using GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects;
 using UnityEngine;
 using GloriousWhale.BeansJam17.Assets.Scripts.Constants;
