@@ -38,3 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Game_SpaceStation.unity
     guid: 673ede07203f6544b974c08d494d7184
+  - enabled: 1
+    path: Assets/_Scenes/Game_Civil.unity
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/_Scenes/Game_Nebula.unity
+    guid: 00000000000000000000000000000000

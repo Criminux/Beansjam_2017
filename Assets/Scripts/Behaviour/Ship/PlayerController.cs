@@ -55,7 +55,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
             {
                 shipProperties.Fuel -= 1;
 
-                int toLoadScene = UnityEngine.Random.Range(1, 7);
+                int toLoadScene = UnityEngine.Random.Range(1, 8);
             
                 switch (toLoadScene)
                 {
@@ -76,6 +76,9 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
                         break;
                     case 6:
                         SceneManager.LoadScene(SceneTypes.Game_Civil);
+                        break;
+                    case 7:
+                        SceneManager.LoadScene(SceneTypes.Game_Nebula);
                         break;
                 }
             }
