@@ -31,10 +31,10 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 
 		void Start()
 		{
+            cargo = GetComponent<CargoHold>();
+
 			Fuel = initialFuel;
 			Ammo = initialAmmo;
-
-            cargo = GetComponent<CargoHold>();
 		}
 	}
 }
