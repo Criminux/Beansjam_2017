@@ -2632,7 +2632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba16f56d1134604ca8629a5c46b5427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsPerPickup: 5
+  itemsPerPickup: 10
 --- !u!114 &114873443642624962
 MonoBehaviour:
   m_ObjectHideFlags: 1
