@@ -56,7 +56,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects
 		public int AddItem(ItemType item, int amount)
 		{
 			// Register item
-			if (content.ContainsKey(item))
+			if (!content.ContainsKey(item))
 				content[item] = 0;
 
 			// Calculate how much can actually be added
