@@ -26,7 +26,6 @@ GameObject:
   - component: {fileID: 114369181951177616}
   - component: {fileID: 114686885901491930}
   - component: {fileID: 114609532261372562}
-  - component: {fileID: 114919419597403802}
   m_Layer: 0
   m_Name: Asteroid_05
   m_TagString: Untagged
@@ -152,3 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUp: {fileID: 1058511090417518, guid: ea4f6b6144ef1ba4e80e405c5586db03, type: 2}
+  particles:
+  - {fileID: 1225692977643434, guid: 3fee4605b12fa654d8d7c27d3e3c2e0f, type: 2}
+  - {fileID: 1715463025963490, guid: 1519d14826c53bf438d0043fcad300b0, type: 2}
+  particleDuration: 4
