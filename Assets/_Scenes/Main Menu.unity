@@ -613,7 +613,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Faster than a Rocket Bean
+  m_Text: Faster than a Rocketbean
 --- !u!222 &1137846816
 CanvasRenderer:
   m_ObjectHideFlags: 0

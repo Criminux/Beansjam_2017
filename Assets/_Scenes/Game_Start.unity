@@ -434,6 +434,20 @@ GameObject:
   m_PrefabParentObject: {fileID: 1187148575863032, guid: 0772e7b37f8bc1341af406ef81889923,
     type: 2}
   m_PrefabInternal: {fileID: 1943247679}
+--- !u!64 &1441238496
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1441238495}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 761ef7a65f975e44a97555d7a76b0260, type: 3}
 --- !u!4 &1464713956 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4479495326991904, guid: 385b1a01133574e4693076adee04fb74,
