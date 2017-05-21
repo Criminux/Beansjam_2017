@@ -66,5 +66,14 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
               
             
         }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if(other.tag == Tags.Bar && UnityEngine.Input.GetKeyDown(KeyCode.F))
+            {
+                Debug.Log("You're interacting with a Bar");
+            }
+            //TODO: Add more Interactables?
+        }
     }
 }

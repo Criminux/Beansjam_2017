@@ -8,6 +8,7 @@ TagManager:
   - WarningArea
   - Enemy
   - AsteroidPickUp
+  - Bar
   layers:
   - Default
   - TransparentFX
