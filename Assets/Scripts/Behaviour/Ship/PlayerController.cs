@@ -12,6 +12,8 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 	public class PlayerController : MonoBehaviour, ShipMovement.InputProvider, ShipShooting.InputProvider
 	{
 
+        PlayerProperties playerProperties;
+
 		public float GetForwardInput()
 		{
 			return UnityEngine.Input.GetAxis(Constants.Input.AxisForward);
@@ -70,11 +72,21 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
             
         }
 
+        private void Start()
+        {
+            playerProperties = GetComponent<PlayerProperties>();   
+        }
+
         private void OnTriggerStay(Collider other)
         {
             if(other.tag == Tags.Bar && UnityEngine.Input.GetKeyDown(KeyCode.F))
             {
                 Debug.Log("You're interacting with a Bar");
+                if(playerProperties.Money >= 25)
+                {
+                    playerProperties.Money -= 25;
+                    playerProperties.Crew += 1;
+                }
             }
             //TODO: Add more Interactables?
         }
