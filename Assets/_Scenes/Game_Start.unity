@@ -177,6 +177,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114732306596514644, guid: 60a5b12fe33eb6347a9aff8d13f324a7,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 18aa5a6bf071fca40abdd08d84cf1ab2,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60a5b12fe33eb6347a9aff8d13f324a7, type: 2}
   m_IsPrefabParent: 0
@@ -892,11 +898,7 @@ Prefab:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114013262911629654, guid: a0d500219e699c34b8ab489224eceec2, type: 2}
-    - {fileID: 114572699453787216, guid: a0d500219e699c34b8ab489224eceec2, type: 2}
-    - {fileID: 114723488323095300, guid: a0d500219e699c34b8ab489224eceec2, type: 2}
-    - {fileID: 114254982548930670, guid: a0d500219e699c34b8ab489224eceec2, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0d500219e699c34b8ab489224eceec2, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &2114079477
