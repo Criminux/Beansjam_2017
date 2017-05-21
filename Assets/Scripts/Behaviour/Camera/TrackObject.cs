@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using GloriousWhale.BeansJam17.Assets.Scripts.Constants;
+using System.Collections;
 using System.Collections.Generic;
 using System.Security.AccessControl;
 using UnityEngine;
@@ -30,9 +31,15 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Camera
 		[SerializeField] private float pitch;
 
 		[SerializeField] private float yaw;
-		
-		
-		void LateUpdate()
+
+
+        private void Start()
+        {
+            trackingObject = GameObject.FindGameObjectWithTag(Tags.Player);
+        }
+
+
+        void LateUpdate()
 		{
 			var behingTrackingObjectByDistance = trackingObject.transform.position + (trackingObject.transform.forward * -1 * distance);
 			var verticalOffsetVector = trackingObject.transform.up * verticalOffset;
