@@ -108,6 +108,36 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &73469007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 73469008}
+  m_Layer: 0
+  m_Name: navigation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &73469008
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 73469007}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1507809534}
+  - {fileID: 1548278694}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &281304573
 Prefab:
   m_ObjectHideFlags: 0
@@ -160,7 +190,7 @@ GameObject:
   - component: {fileID: 457447616}
   - component: {fileID: 457447615}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: light_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -312,6 +342,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 50000
       objectReference: {fileID: 0}
+    - target: {fileID: 1235475141042416, guid: 5479a189ceb907c469c95ebd86c8a07d, type: 2}
+      propertyPath: m_Name
+      value: planet_002
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5479a189ceb907c469c95ebd86c8a07d, type: 2}
   m_IsPrefabParent: 0
@@ -433,7 +467,7 @@ GameObject:
   - component: {fileID: 1054564316}
   - component: {fileID: 1054564315}
   m_Layer: 0
-  m_Name: Civilship_01
+  m_Name: civil_ship_001
   m_TagString: Civil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -454,7 +488,7 @@ MonoBehaviour:
   transforms:
   - {fileID: 1507809534}
   - {fileID: 1548278694}
-  - {fileID: 1824688800}
+  - {fileID: 0}
   distanceToKeep: 0.01
   speed: 0.01
 --- !u!65 &1054564316
@@ -598,29 +632,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1974121323404554, guid: a0d500219e699c34b8ab489224eceec2,
     type: 2}
   m_PrefabInternal: {fileID: 1801856474}
---- !u!114 &1441238496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1441238495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c22cfa55d81a52148af1f447d0a3a2b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1441238510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1441238495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ba16f56d1134604ca8629a5c46b5427, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemsPerPickup: 0
 --- !u!4 &1464713956 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4479495326991904, guid: 385b1a01133574e4693076adee04fb74,
@@ -682,6 +693,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 90000
       objectReference: {fileID: 0}
+    - target: {fileID: 1513116726960464, guid: b812890f66c79ec4aa5ceaa8a4303abc, type: 2}
+      propertyPath: m_Name
+      value: moon_001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b812890f66c79ec4aa5ceaa8a4303abc, type: 2}
   m_IsPrefabParent: 0
@@ -700,7 +715,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1507809534}
   m_Layer: 0
-  m_Name: Position1
+  m_Name: nav_point_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -717,8 +732,8 @@ Transform:
   m_LocalPosition: {x: 455.2, y: -50.05178, z: 92.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 73469008}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1548278693
 GameObject:
@@ -730,7 +745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1548278694}
   m_Layer: 0
-  m_Name: Position2
+  m_Name: nav_point_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -747,8 +762,8 @@ Transform:
   m_LocalPosition: {x: -50.72, y: -50.05178, z: 92.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 73469008}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1590626024 stripped
 GameObject:
@@ -779,7 +794,7 @@ GameObject:
   - component: {fileID: 1680283021}
   - component: {fileID: 1680283020}
   m_Layer: 0
-  m_Name: Directional Light (1)
+  m_Name: light_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -832,7 +847,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50.000004, y: 115.035, z: 0}
 --- !u!1001 &1801856474
 Prefab:
@@ -877,7 +892,11 @@ Prefab:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114013262911629654, guid: a0d500219e699c34b8ab489224eceec2, type: 2}
+    - {fileID: 114572699453787216, guid: a0d500219e699c34b8ab489224eceec2, type: 2}
+    - {fileID: 114723488323095300, guid: a0d500219e699c34b8ab489224eceec2, type: 2}
+    - {fileID: 114254982548930670, guid: a0d500219e699c34b8ab489224eceec2, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a0d500219e699c34b8ab489224eceec2, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &2114079477
