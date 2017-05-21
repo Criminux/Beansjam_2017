@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Assets.Scripts.Constants;
 using GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects;
 using GloriousWhale.BeansJam17.Assets.Scripts.Constants;
 using UnityEngine;
@@ -13,21 +12,26 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 
 	public class InventoryController : MonoBehaviour
 	{
-		
+
+		[SerializeField] private GameObject itemsCaptionObject;
 		[SerializeField] private GameObject itemsListObject;
 		[SerializeField] private float fadeInDuration = .6f;
 		[SerializeField] private float fadeOutDuration = .3f;
 
-		private Image image;
 		private GameObject objectToDisplayCargoFor;
+
+		private Image image;
+		private Text itemsCaptionObjectText;
 		private Text itemsListObjectText;
 
 		public bool IsShowing { get; private set; }
 
 		void Start()
 		{
-			image = GetComponent<Image>();
 			objectToDisplayCargoFor = GameObject.FindGameObjectWithTag(Tags.Player);
+
+			image = GetComponent<Image>();
+			this.itemsCaptionObjectText = itemsCaptionObject.GetComponent<Text>();
 			this.itemsListObjectText = itemsListObject.GetComponent<Text>();
 
 			CrossFadeAlphaChildren(0, 0, true);
@@ -47,19 +51,22 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 			}
 		}
 
+		private void CrossFadeAlphaChildren(float target, float duration, bool ignoreTimeScale)
+		{
+			image.CrossFadeAlpha(target, duration, ignoreTimeScale);
+			itemsCaptionObjectText.CrossFadeAlpha(target, duration, ignoreTimeScale);
+			itemsListObjectText.CrossFadeAlpha(target, duration, ignoreTimeScale);
+		}
+
 
 		private void Show()
 		{
 			IsShowing = true;
-
-			var itemsText = this.itemsListObjectText;
+			
 			var cargoHoldToDisplay = objectToDisplayCargoFor.GetComponent<CargoHold>();
 
-			var lines = cargoHoldToDisplay.Content
-				.Where(amountForItem => amountForItem.Value != 0)
-				.Select(amountForItem => GetTextFor(amountForItem.Key, amountForItem.Value))
-				.ToList();
-			itemsText.text = string.Join("\n", lines.ToArray());
+			UpdateItemsCaption(cargoHoldToDisplay);
+			UpdateItemsList(cargoHoldToDisplay);
 
 			CrossFadeAlphaChildren(1, fadeInDuration, false);
 		}
@@ -70,15 +77,29 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 			CrossFadeAlphaChildren(0, fadeOutDuration, false);
 		}
 
-		private void CrossFadeAlphaChildren(float target, float duration, bool ignoreTimeScale)
+
+		private void UpdateItemsCaption(CargoHold cargoHoldToDisplay)
 		{
-			image.CrossFadeAlpha(target, duration, ignoreTimeScale);
-			itemsListObjectText.CrossFadeAlpha(target, duration, ignoreTimeScale);
+			itemsCaptionObjectText.text = GetCargoHoldCaption(cargoHoldToDisplay);
 		}
 
-		private string GetTextFor(ItemType item, int amount)
+		private void UpdateItemsList(CargoHold cargoHoldToDisplay)
 		{
-			return string.Format("[{0} Slots] \t{1}x\t{2}", item.Size * amount, amount, item.DisplayName);
+			var lines = cargoHoldToDisplay.Content
+				.Where(amountForItem => amountForItem.Value != 0)
+				.Select(amountForItem => GetItemLineFor(amountForItem.Key, amountForItem.Value))
+				.ToList();
+			itemsListObjectText.text = string.Join("\n", lines.ToArray());
+		}
+
+		private string GetCargoHoldCaption(CargoHold cargoHold)
+		{
+			return string.Format("Cargo Hold [{0} Occupied Slots / {1} Total Slots]", cargoHold.OccupiedSpace, cargoHold.Size);
+		}
+
+		private string GetItemLineFor(ItemType item, int amount)
+		{
+			return string.Format("[{0:00} Slots] \t{1}x\t{2}", (item.Size * amount), amount, item.DisplayName);
 		}
 	}
 }
