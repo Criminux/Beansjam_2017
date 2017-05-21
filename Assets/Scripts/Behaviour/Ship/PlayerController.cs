@@ -12,7 +12,15 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 	public class PlayerController : MonoBehaviour, ShipMovement.InputProvider, ShipShooting.InputProvider
 	{
 
-        PlayerProperties playerProperties;
+        private PlayerProperties playerProperties;
+		private StationMenuController stationMenu;
+
+
+		private void Start()
+		{
+			playerProperties = GetComponent<PlayerProperties>();
+			stationMenu = GameObject.FindGameObjectWithTag(Tags.StationMenu).GetComponent<StationMenuController>();
+		}
 
 		public float GetForwardInput()
 		{
@@ -78,11 +86,6 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
             
         }
 
-        private void Start()
-        {
-            playerProperties = GetComponent<PlayerProperties>();   
-        }
-
         private void OnTriggerStay(Collider other)
         {
             if(other.tag == Tags.Bar && UnityEngine.Input.GetKeyDown(KeyCode.F))
@@ -94,14 +97,9 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
                     playerProperties.Crew += 1;
                 }
             }
-            if (other.tag == Tags.SpaceStation && UnityEngine.Input.GetKeyDown(KeyCode.F))
+            if (other.tag == Tags.SpaceStation && UnityEngine.Input.GetKeyDown(KeyCode.F) && !stationMenu.IsShowing)
             {
-                Debug.Log("You're interacting with a Station");
-                //if (playerProperties.Money >= 25)
-                //{
-                //    playerProperties.Money -= 25;
-                //    playerProperties.Crew += 1;
-                //}
+				stationMenu.Show();
             }
             if (other.tag == Tags.Civil && UnityEngine.Input.GetKeyDown(KeyCode.F))
             {

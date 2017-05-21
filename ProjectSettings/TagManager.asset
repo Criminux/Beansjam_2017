@@ -11,6 +11,7 @@ TagManager:
   - Bar
   - Civil
   - SpaceStation
+  - StationMenu
   layers:
   - Default
   - TransparentFX
