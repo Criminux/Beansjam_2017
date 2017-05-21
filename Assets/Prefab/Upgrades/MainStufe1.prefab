@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 33486105875380444}
   - component: {fileID: 23850454809261462}
   m_Layer: 0
-  m_Name: ThrusterStufe1
+  m_Name: MainStufe1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,8 +114,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1730427092976490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: 2.44, z: -12.71}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalPosition: {x: -0.00013, y: 0.0086, z: -0.0422}
+  m_LocalScale: {x: 0.1, y: 0.4, z: 0.3}
   m_Children:
   - {fileID: 4607918987057362}
   m_Father: {fileID: 0}
@@ -6343,7 +6343,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -671163882
+  randomSeed: 607295715
   InitialModule:
     serializedVersion: 3
     enabled: 1

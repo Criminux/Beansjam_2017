@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 114658979942037172}
   - component: {fileID: 114540357561376774}
   m_Layer: 0
-  m_Name: WeaponStufe1
+  m_Name: StarShip_Default_Weapon_Front_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33913636011267668}
   - component: {fileID: 23896791604404736}
   m_Layer: 0
-  m_Name: ShieldUpgrade
+  m_Name: StarShip_Default_Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
