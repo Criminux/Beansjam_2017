@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameManager;
 using GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects;
 using GloriousWhale.BeansJam17.Assets.Scripts.Constants;
 using UnityEngine;
@@ -20,6 +21,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 		[SerializeField] private float fadeOutDuration = .3f;
 
 		private GameObject objectToDisplayCargoFor;
+		private GameManager gameManager;
 
 		private Image image;
 		private RectTransform rectTransform;
@@ -33,6 +35,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 		void Start()
 		{
 			objectToDisplayCargoFor = GameObject.FindGameObjectWithTag(Tags.Player);
+			gameManager = GameObject.FindGameObjectWithTag(Tags.GameController).GetComponent<GameManager>();
 
 			rectTransform = GetComponent<RectTransform>();
 			image = GetComponent<Image>();
@@ -53,7 +56,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 			{
 				Show();
 			}
-			else if (IsShowing && UnityEngine.Input.GetKeyDown(KeyCode.Escape))
+			else if (IsShowing && UnityEngine.Input.GetKeyDown(KeyCode.I))
 			{
 				Hide();
 			}
@@ -76,6 +79,8 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 			UpdateExtensionControllers();
 
 			SetScale(1, fadeInDuration);
+
+			gameManager.RegisterModalWindow();
 		}
 
 
@@ -83,6 +88,8 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 		{
 			IsShowing = false;
 			SetScale(0, fadeOutDuration);
+
+			gameManager.UnregisterModalWindow();
 		}
 
 
