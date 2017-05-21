@@ -405,7 +405,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 64127616932905734, guid: 06e82e7a93309f145a8239501e3b2826,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 64127616932905734, guid: 06e82e7a93309f145a8239501e3b2826, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 06e82e7a93309f145a8239501e3b2826, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &986662706 stripped
@@ -744,6 +750,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1590626024 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1804209956305544, guid: 06e82e7a93309f145a8239501e3b2826,
+    type: 2}
+  m_PrefabInternal: {fileID: 961523064}
+--- !u!64 &1590626025
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1590626024}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 4f2c653fc37d93240a269a523dc5236e, type: 3}
 --- !u!1 &1680283019
 GameObject:
   m_ObjectHideFlags: 0
