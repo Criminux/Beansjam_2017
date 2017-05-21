@@ -13,6 +13,12 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects
 
 		[SerializeField] private int size;
 
+
+		public Dictionary<ItemType, int> Content
+		{
+			get { return content; }
+		}
+
 		public int OccupiedSpace { get; private set; }
 
 		public int Size
