@@ -104,6 +104,8 @@ GameObject:
   - component: {fileID: 114772556008466410}
   - component: {fileID: 114545644035349370}
   - component: {fileID: 114856825545947180}
+  - component: {fileID: 114206641329367742}
+  - component: {fileID: 114254982548930670}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -469,6 +471,29 @@ MonoBehaviour:
   weapons:
   - {fileID: 1780264679714830}
   - {fileID: 1112643035095376}
+--- !u!114 &114206641329367742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974121323404554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22cfa55d81a52148af1f447d0a3a2b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114254982548930670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974121323404554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba16f56d1134604ca8629a5c46b5427, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsPerPickup: 1
 --- !u!114 &114285999258643006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -507,7 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794963b61457125459059c574804082c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 100
+  size: 300
 --- !u!114 &114472150981905372
 MonoBehaviour:
   m_ObjectHideFlags: 1

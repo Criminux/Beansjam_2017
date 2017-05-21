@@ -18,8 +18,10 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Constants
 
 		public static readonly ItemType ShieldTier1 = new ItemType("shield_tier_1", "Shield", 20, SlotType.Shield);
         public static readonly ItemType ShieldTier2 = new ItemType("shield_tier_2", "Super Shield", 25, SlotType.Shield);
+		public static readonly ItemType ShieldTier3 = new ItemType("shield_tier_3", "Mega Shield", 50, SlotType.Shield);
+		public static readonly ItemType ShieldTier4 = new ItemType("shield_tier_4", "Terra Shield", 75, SlotType.Shield);
 
-        public static readonly ItemType Asteroid_Material = new ItemType("asteroid_material", "Asteroid Material", 1, SlotType.None);
+		public static readonly ItemType Asteroid_Material = new ItemType("asteroid_material", "Asteroid Material", 1, SlotType.None);
         
         public static IEnumerable<ItemType> Values
 		{
@@ -33,7 +35,10 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Constants
                 yield return ThrustTier2;
 				yield return ThrustTier3;
 
+				yield return ShieldTier1;
 				yield return ShieldTier2;
+				yield return ShieldTier3;
+				yield return ShieldTier4;
 
                 yield return Asteroid_Material;
             }

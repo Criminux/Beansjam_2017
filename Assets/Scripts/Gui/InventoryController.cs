@@ -15,14 +15,18 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 
 		[SerializeField] private GameObject itemsCaptionObject;
 		[SerializeField] private GameObject itemsListObject;
+		[SerializeField] private GameObject[] extensionDropdownObjects;
 		[SerializeField] private float fadeInDuration = .6f;
 		[SerializeField] private float fadeOutDuration = .3f;
 
 		private GameObject objectToDisplayCargoFor;
 
 		private Image image;
+		private RectTransform rectTransform;
 		private Text itemsCaptionObjectText;
 		private Text itemsListObjectText;
+		private List<ExtensionDropdownController> extensionDropdownObjectControllers;
+
 
 		public bool IsShowing { get; private set; }
 
@@ -30,11 +34,15 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 		{
 			objectToDisplayCargoFor = GameObject.FindGameObjectWithTag(Tags.Player);
 
+			rectTransform = GetComponent<RectTransform>();
 			image = GetComponent<Image>();
 			this.itemsCaptionObjectText = itemsCaptionObject.GetComponent<Text>();
 			this.itemsListObjectText = itemsListObject.GetComponent<Text>();
+			this.extensionDropdownObjectControllers = extensionDropdownObjects
+				.Select(o => o.GetComponent<ExtensionDropdownController>())
+				.ToList();
 
-			CrossFadeAlphaChildren(0, 0, true);
+			SetScale(0, 0);
 			IsShowing = false;
 		}
 
@@ -51,11 +59,9 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 			}
 		}
 
-		private void CrossFadeAlphaChildren(float target, float duration, bool ignoreTimeScale)
+		private void SetScale(float target, float duration)
 		{
-			image.CrossFadeAlpha(target, duration, ignoreTimeScale);
-			itemsCaptionObjectText.CrossFadeAlpha(target, duration, ignoreTimeScale);
-			itemsListObjectText.CrossFadeAlpha(target, duration, ignoreTimeScale);
+			rectTransform.localScale = new Vector3(target, target, target);
 		}
 
 
@@ -67,14 +73,16 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 
 			UpdateItemsCaption(cargoHoldToDisplay);
 			UpdateItemsList(cargoHoldToDisplay);
+			UpdateExtensionControllers();
 
-			CrossFadeAlphaChildren(1, fadeInDuration, false);
+			SetScale(1, fadeInDuration);
 		}
+
 
 		private void Hide()
 		{
 			IsShowing = false;
-			CrossFadeAlphaChildren(0, fadeOutDuration, false);
+			SetScale(0, fadeOutDuration);
 		}
 
 
@@ -90,6 +98,11 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 				.Select(amountForItem => GetItemLineFor(amountForItem.Key, amountForItem.Value))
 				.ToList();
 			itemsListObjectText.text = string.Join("\n", lines.ToArray());
+		}
+		private void UpdateExtensionControllers()
+		{
+			foreach (var extensionDropdownObjectController in extensionDropdownObjectControllers)
+				extensionDropdownObjectController.Refresh();
 		}
 
 		private string GetCargoHoldCaption(CargoHold cargoHold)
