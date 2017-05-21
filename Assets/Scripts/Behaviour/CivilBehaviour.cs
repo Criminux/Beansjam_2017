@@ -11,6 +11,13 @@ public class CivilBehaviour : MonoBehaviour {
     [SerializeField]
     float speed;
 
+    bool hasPaid = false;
+    public bool HasPaid
+    {
+        get { return hasPaid; }
+        set { hasPaid = value; }
+    }
+
     private int currentTarget;
 
 	void Start ()

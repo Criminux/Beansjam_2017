@@ -31,6 +31,9 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects {
         public event EnterBarAreaHandler EnterBarArea;
         public event LeftBarAreaHandler LeftBarArea;
 
+        public event EnterCivilAreaHandler EnterCivilArea;
+        public event LeftCivilAreaHandler LeftCivilArea;
+
 
         void OnTriggerExit(Collider collider)
 		{
@@ -49,8 +52,13 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects {
                 if (LeftBarArea != null) LeftBarArea();
                 Debug.Log(gameObject.name + " left the Bar Area");
             }
+            else if (collider.tag == Tags.Civil)
+            {
+                if (LeftCivilArea != null) LeftCivilArea();
+                Debug.Log(gameObject.name + " left the Civil Area");
+            }
 
-		}
+        }
 
 		void OnTriggerEnter(Collider collider)
 		{
@@ -69,6 +77,11 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects {
                 if (EnterBarArea != null) EnterBarArea();
                 Debug.Log(gameObject.name + " entered Bar area.");
             }
+            else if (collider.tag == Tags.Civil)
+            {
+                if (EnterCivilArea != null) EnterCivilArea();
+                Debug.Log(gameObject.name + " entered Civil area.");
+            }
         }
 
 		public delegate void LeftLegalAreaHandler();
@@ -82,5 +95,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects {
         public delegate void EnterBarAreaHandler();
         public delegate void LeftBarAreaHandler();
 
+        public delegate void EnterCivilAreaHandler();
+        public delegate void LeftCivilAreaHandler();
     }
 }
