@@ -17,7 +17,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
         float cooldownTimer = 0;
 
         [SerializeField]
-        float crewMulitplier = 0.2;
+        float crewMulitplier = 0.2f;
 
         PlayerProperties playerProperties;
 
