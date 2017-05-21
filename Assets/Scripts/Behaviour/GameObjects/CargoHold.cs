@@ -127,5 +127,14 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects
 		{
 			return GetAmountOf(item) * item.Size;
 		}
+
+        public void SetAmount(ItemType item, int amount)
+        {
+            var difference = GetAmountOf(item) - amount;
+            if (difference < 0)
+                AddItem(item, -difference);
+            else
+                WithdrawItem(item, difference);
+        }
 	}
 }

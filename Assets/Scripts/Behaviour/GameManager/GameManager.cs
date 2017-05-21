@@ -12,6 +12,11 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameManager
 
 		public event ModalWindowActivationChangedHandler ModalWindowActivationChanged;
 
+        public bool ModalWindowActive
+        {
+            get { return (_openModalWindows > 0); }
+        }
+
 		void Start()
 		{
 			LockCursor();

@@ -2539,7 +2539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb599870fb2a4364f915b06dda152565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialMoney: 100
+  initialMoney: 1000
   initialCrew: 3
 --- !u!114 &114484035512579720
 MonoBehaviour:
@@ -2566,7 +2566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794963b61457125459059c574804082c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 1000
+  size: 300
 --- !u!114 &114552390059606940
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -15,6 +15,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
         private PlayerProperties playerProperties;
 		private StationMenuController stationMenu;
         ShipProperties shipProperties;
+        GameManager.GameManager gameManager;
 
 
 		private void Start()
@@ -22,6 +23,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 			playerProperties = GetComponent<PlayerProperties>();
 			stationMenu = GameObject.FindGameObjectWithTag(Tags.StationMenu).GetComponent<StationMenuController>();
 			shipProperties = GetComponent<ShipProperties>();
+            gameManager = GameObject.FindGameObjectWithTag(Tags.GameController).GetComponent<GameManager.GameManager>();
 		}
 
 		public float GetForwardInput()
@@ -36,17 +38,38 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 
 		public float GetYawInput()
 		{
-			return UnityEngine.Input.GetAxis(Constants.Input.AxisMouseX);
+            if(gameManager.ModalWindowActive)
+            {
+                return 0;
+            }
+            else
+            {
+			    return UnityEngine.Input.GetAxis(Constants.Input.AxisMouseX);
+            }
 		}
 
 		public float GetPitchInput()
 		{
-			return UnityEngine.Input.GetAxis(Constants.Input.AxisMouseY);
+            if (gameManager.ModalWindowActive)
+            {
+                return 0;
+            }
+            else
+            {
+                return UnityEngine.Input.GetAxis(Constants.Input.AxisMouseY);
+            }
 		}
 
 		public bool GetShootingInput()
 		{
-			return UnityEngine.Input.GetMouseButton(0);
+            if (gameManager.ModalWindowActive)
+            {
+                return false;
+            }
+            else
+            {
+                return UnityEngine.Input.GetMouseButton(0);
+            }
 		}
 
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects;
 using GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship;
 using UnityEngine;
+using GloriousWhale.BeansJam17.Assets.Scripts.Constants;
 
 public class SellProvider : TransactionProvider {
 
@@ -11,9 +12,16 @@ public class SellProvider : TransactionProvider {
 		Init();
 	}
 
-	protected override bool MayTransact(CargoHold targetCargoHold, PlayerProperties playerProperties)
-	{
-		return targetCargoHold.GetAmountOf(Item) > 0;
+	protected override bool MayTransact(CargoHold targetCargoHold, PlayerProperties playerProperties, ExtensionManager extensionManager)
+    {
+        if (Item.SlotType == SlotType.None)
+        {
+            return targetCargoHold.GetAmountOf(Item) > 0;
+        }
+        else
+        {
+            return (extensionManager.GetForSlot(Item.SlotType) != Item && targetCargoHold.GetAmountOf(Item) > 0) || targetCargoHold.GetAmountOf(Item) > 1;
+        }
 	}
 
 	protected override void DoTransaction(CargoHold targetCargoHold, PlayerProperties playerProperties)

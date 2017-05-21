@@ -23,7 +23,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 
             set
             {
-                cargo.AddItem(ItemType.Fuel, value);
+                cargo.SetAmount(ItemType.Fuel, value);
             }
         }
 

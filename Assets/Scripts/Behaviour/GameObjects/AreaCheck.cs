@@ -34,6 +34,8 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects {
         public event EnterCivilAreaHandler EnterCivilArea;
         public event LeftCivilAreaHandler LeftCivilArea;
 
+        public event EnterCivilAreaHandler EnterTradingArea;
+        public event LeftCivilAreaHandler LeftTradingArea;
 
         void OnTriggerExit(Collider collider)
 		{
@@ -56,6 +58,11 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects {
             {
                 if (LeftCivilArea != null) LeftCivilArea();
                 Debug.Log(gameObject.name + " left the Civil Area");
+            }
+            else if (collider.tag == Tags.SpaceStation)
+            {
+                if (LeftTradingArea != null) LeftTradingArea();
+                Debug.Log(gameObject.name + " left the Trading Area");
             }
 
         }
@@ -82,6 +89,11 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects {
                 if (EnterCivilArea != null) EnterCivilArea();
                 Debug.Log(gameObject.name + " entered Civil area.");
             }
+            else if (collider.tag == Tags.SpaceStation)
+            {
+                if (EnterTradingArea != null) EnterTradingArea();
+                Debug.Log(gameObject.name + " entered Trading area.");
+            }
         }
 
 		public delegate void LeftLegalAreaHandler();
@@ -97,5 +109,8 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects {
 
         public delegate void EnterCivilAreaHandler();
         public delegate void LeftCivilAreaHandler();
+
+        public delegate void EnterTradingAreaHandler();
+        public delegate void LeftTradingAreaHandler();
     }
 }

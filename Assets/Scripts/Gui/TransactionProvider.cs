@@ -19,6 +19,7 @@ public abstract class TransactionProvider : MonoBehaviour
 
 	private PlayerProperties playerProperties;
 	private CargoHold playerCargoHold;
+    private ExtensionManager playerExtensionManager;
 	private Text associatedLabelText;
 
 	public float Price
@@ -42,11 +43,12 @@ public abstract class TransactionProvider : MonoBehaviour
 		var player = GameObject.FindGameObjectWithTag(Tags.Player);
 		playerProperties = player.GetComponent<PlayerProperties>();
 		playerCargoHold= player.GetComponent<CargoHold>();
+        playerExtensionManager = player.GetComponent<ExtensionManager>();
 	}
 
 	protected void TryTransact()
 	{
-		if (MayTransact(playerCargoHold, playerProperties))
+		if (MayTransact(playerCargoHold, playerProperties, playerExtensionManager))
 		{
 			DoTransaction(playerCargoHold, playerProperties);
 			if (AfterTransaction != null) AfterTransaction();
@@ -54,7 +56,7 @@ public abstract class TransactionProvider : MonoBehaviour
 
 	}
 
-	protected abstract bool MayTransact(CargoHold targetCargoHold, PlayerProperties playerProperties);
+	protected abstract bool MayTransact(CargoHold targetCargoHold, PlayerProperties playerProperties, ExtensionManager extensionManager);
 
 	protected abstract void DoTransaction(CargoHold targetCargoHold, PlayerProperties playerProperties);
 
@@ -65,7 +67,7 @@ public abstract class TransactionProvider : MonoBehaviour
 
 	public void Refresh()
 	{
-		var targetColor = MayTransact(playerCargoHold, playerProperties) ? Color.black : Color.red;
+		var targetColor = MayTransact(playerCargoHold, playerProperties, playerExtensionManager) ? Color.black : Color.red;
 		associatedLabelText.color = targetColor;
 	}
 

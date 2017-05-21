@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects;
 using GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship;
@@ -20,11 +21,10 @@ public class BuyProvider : TransactionProvider {
 		playerProperties.Money -= Price;
 	}
 
-
-	protected override bool MayTransact(CargoHold targetCargoHold, PlayerProperties playerProperties)
-	{
-		var enoughSpace = (targetCargoHold.Size - targetCargoHold.OccupiedSpace) >= Item.Size;
-		var enoughMoney = playerProperties.Money > Price;
-		return enoughMoney && enoughSpace;
-	}
+    protected override bool MayTransact(CargoHold targetCargoHold, PlayerProperties playerProperties, ExtensionManager extensionManager)
+    {
+        var enoughSpace = (targetCargoHold.Size - targetCargoHold.OccupiedSpace) >= Item.Size;
+        var enoughMoney = playerProperties.Money > Price;
+        return enoughMoney && enoughSpace;
+    }
 }
