@@ -56,6 +56,8 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
                 shipProperties.Fuel -= 1;
 
                 int toLoadScene = UnityEngine.Random.Range(1, 8);
+
+                transform.position = new Vector3(0, 0, 0);
             
                 switch (toLoadScene)
                 {
