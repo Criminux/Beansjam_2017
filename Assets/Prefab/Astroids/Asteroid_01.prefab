@@ -116,6 +116,8 @@ MonoBehaviour:
   - {fileID: 1715463025963490, guid: 1519d14826c53bf438d0043fcad300b0, type: 2}
   - {fileID: 1225692977643434, guid: 3fee4605b12fa654d8d7c27d3e3c2e0f, type: 2}
   particleDuration: 4
+  destructionClip: {fileID: 8300000, guid: cb4a21cefdcf16944bc634d1a9e61807, type: 3}
+  soundVolume: 0.5
 --- !u!114 &114383967512482878
 MonoBehaviour:
   m_ObjectHideFlags: 1

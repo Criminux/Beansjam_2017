@@ -15,13 +15,20 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Asteroid
 		[SerializeField] private GameObject[] particles;
 		[SerializeField] private float particleDuration = .5f;
 
-		void Start()
+        [SerializeField]
+        AudioClip destructionClip;
+        [SerializeField]
+        float soundVolume;
+
+        void Start()
 		{
 			GetComponent<ObjectHealth>().HealthReachedZero += Destruct;
 		}
 
 		private void Destruct()
 		{
+            AudioSource.PlayClipAtPoint(destructionClip, transform.position, soundVolume);
+
 			Instantiate(pickUp, transform.position, Quaternion.identity);
 			var selectedParticle = particles[Random.Range(0, particles.GetUpperBound(0))];
 
