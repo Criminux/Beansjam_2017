@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33509522462206404}
   - component: {fileID: 23712199935392962}
   - component: {fileID: 65339671764024714}
+  - component: {fileID: 64127616932905734}
+  - component: {fileID: 114908963476284140}
   m_Layer: 0
   m_Name: space_station_001
   m_TagString: Bar
@@ -81,6 +83,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1804209956305544}
   m_Mesh: {fileID: 4300000, guid: 4f2c653fc37d93240a269a523dc5236e, type: 3}
+--- !u!64 &64127616932905734
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804209956305544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.33
+  m_Mesh: {fileID: 4300000, guid: 4f2c653fc37d93240a269a523dc5236e, type: 3}
 --- !u!65 &65339671764024714
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -93,3 +109,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.09, z: 0.09}
   m_Center: {x: -0.004541115, y: 0.00007167005, z: 0.006757209}
+--- !u!114 &114908963476284140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804209956305544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f27f7a1eed01ac46a231fa73f368825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
