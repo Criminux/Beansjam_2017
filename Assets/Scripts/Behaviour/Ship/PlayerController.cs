@@ -13,6 +13,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 	{
 
         PlayerProperties playerProperties;
+        ShipProperties shipProperties;
 
 		public float GetForwardInput()
 		{
@@ -50,37 +51,40 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 
         private void InitiateJump()
         {
-            //TODO: Make Countdown
-            int toLoadScene = UnityEngine.Random.Range(1, 7);
-            
-            switch (toLoadScene)
+            if(shipProperties.Fuel > 0)
             {
-                case 1:
-                    SceneManager.LoadScene(SceneTypes.Game_Asteroid);
-                    break;
-                case 2:
-                    SceneManager.LoadScene(SceneTypes.Game_Bar);
-                    break;
-                case 3:
-                    SceneManager.LoadScene(SceneTypes.Game_Enemy);
-                    break;
-                case 4:
-                    SceneManager.LoadScene(SceneTypes.Game_Police);
-                    break;
-                case 5:
-                    SceneManager.LoadScene(SceneTypes.Game_SpaceStation);
-                    break;
-                case 6:
-                    SceneManager.LoadScene(SceneTypes.Game_Civil);
-                    break;
-            }
-              
+                shipProperties.Fuel -= 1;
+
+                int toLoadScene = UnityEngine.Random.Range(1, 7);
             
+                switch (toLoadScene)
+                {
+                    case 1:
+                        SceneManager.LoadScene(SceneTypes.Game_Asteroid);
+                        break;
+                    case 2:
+                        SceneManager.LoadScene(SceneTypes.Game_Bar);
+                        break;
+                    case 3:
+                        SceneManager.LoadScene(SceneTypes.Game_Enemy);
+                        break;
+                    case 4:
+                        SceneManager.LoadScene(SceneTypes.Game_Police);
+                        break;
+                    case 5:
+                        SceneManager.LoadScene(SceneTypes.Game_SpaceStation);
+                        break;
+                    case 6:
+                        SceneManager.LoadScene(SceneTypes.Game_Civil);
+                        break;
+                }
+            }
         }
 
         private void Start()
         {
-            playerProperties = GetComponent<PlayerProperties>();   
+            playerProperties = GetComponent<PlayerProperties>();
+            shipProperties = GetComponent<ShipProperties>();  
         }
 
         private void OnTriggerStay(Collider other)
