@@ -47,7 +47,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
             if(canShoot)
             {
 			    Instantiate(projectile, projectileSpawn.position, projectileSpawn.transform.rotation);
-                cooldownTimer = shotCooldown * (playerProperties.Crew * crewMulitplier);
+                cooldownTimer = shotCooldown / (playerProperties.Crew * crewMulitplier);
             }
 		}
 

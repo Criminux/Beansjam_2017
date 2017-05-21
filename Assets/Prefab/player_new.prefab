@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 114781214979164790}
   - component: {fileID: 82005635511650632}
   - component: {fileID: 114250898112679954}
+  - component: {fileID: 64586575363535968}
   m_Layer: 0
   m_Name: player_new
   m_TagString: Player
@@ -2288,6 +2289,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &64586575363535968
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1187148575863032}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 761ef7a65f975e44a97555d7a76b0260, type: 3}
 --- !u!82 &82005635511650632
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2462,6 +2477,7 @@ MonoBehaviour:
   projectile: {fileID: 1232926923755396, guid: b45725930ee5d744b8087a8b58452c32, type: 2}
   projectileSpawn: {fileID: 4732652216475934}
   shotCooldown: 0.7
+  crewMulitplier: 0.2
 --- !u!114 &114084954170811106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2511,6 +2527,7 @@ MonoBehaviour:
   projectile: {fileID: 1232926923755396, guid: b45725930ee5d744b8087a8b58452c32, type: 2}
   projectileSpawn: {fileID: 4650250819735494}
   shotCooldown: 0.7
+  crewMulitplier: 0.2
 --- !u!114 &114405618249075662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2549,7 +2566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794963b61457125459059c574804082c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 300
+  size: 1000
 --- !u!114 &114552390059606940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2587,6 +2604,7 @@ MonoBehaviour:
   projectile: {fileID: 1232926923755396, guid: b45725930ee5d744b8087a8b58452c32, type: 2}
   projectileSpawn: {fileID: 4827607138840138}
   shotCooldown: 0.2
+  crewMulitplier: 0.2
 --- !u!114 &114781214979164790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2633,6 +2651,7 @@ MonoBehaviour:
   projectile: {fileID: 1232926923755396, guid: b45725930ee5d744b8087a8b58452c32, type: 2}
   projectileSpawn: {fileID: 4568693731647192}
   shotCooldown: 0.5
+  crewMulitplier: 0.2
 --- !u!114 &114828329720268976
 MonoBehaviour:
   m_ObjectHideFlags: 1
