@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - AsteroidPickUp
   - Bar
+  - Civil
+  - SpaceStation
   layers:
   - Default
   - TransparentFX
