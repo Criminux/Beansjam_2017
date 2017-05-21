@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship;
+using GloriousWhale.BeansJam17.Assets.Scripts.Constants;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,11 +16,17 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
         float shotCooldown;
         float cooldownTimer = 0;
 
+        [SerializeField]
+        float crewMulitplier = 0.2f;
+
+        PlayerProperties playerProperties;
+
         bool canShoot;
 
 		private void Start()
 		{
             canShoot = true;
+            playerProperties = GameObject.FindGameObjectWithTag(Tags.Player).GetComponent<PlayerProperties>();
 		}
 
         private void Update()
@@ -39,7 +47,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
             if(canShoot)
             {
 			    Instantiate(projectile, projectileSpawn.position, projectileSpawn.transform.rotation);
-                cooldownTimer = shotCooldown;
+                cooldownTimer = shotCooldown * (playerProperties.Crew * crewMulitplier);
             }
 		}
 
