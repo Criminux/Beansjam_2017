@@ -493,6 +493,61 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198558526604184572, guid: 2603c77a425836e4591fa8a3fc0d379e,
+        type: 2}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.99269783
+      objectReference: {fileID: 0}
+    - target: {fileID: 198558526604184572, guid: 2603c77a425836e4591fa8a3fc0d379e,
+        type: 2}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.4705882
+      objectReference: {fileID: 0}
+    - target: {fileID: 198558526604184572, guid: 2603c77a425836e4591fa8a3fc0d379e,
+        type: 2}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198558526604184572, guid: 2603c77a425836e4591fa8a3fc0d379e,
+        type: 2}
+      propertyPath: randomSeed
+      value: 2131479129
+      objectReference: {fileID: 0}
+    - target: {fileID: 198558526604184572, guid: 2603c77a425836e4591fa8a3fc0d379e,
+        type: 2}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.17647058
+      objectReference: {fileID: 0}
+    - target: {fileID: 198558526604184572, guid: 2603c77a425836e4591fa8a3fc0d379e,
+        type: 2}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.7955374
+      objectReference: {fileID: 0}
+    - target: {fileID: 198558526604184572, guid: 2603c77a425836e4591fa8a3fc0d379e,
+        type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.atime1
+      value: 26600
+      objectReference: {fileID: 0}
+    - target: {fileID: 198558526604184572, guid: 2603c77a425836e4591fa8a3fc0d379e,
+        type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.atime2
+      value: 41056
+      objectReference: {fileID: 0}
+    - target: {fileID: 198558526604184572, guid: 2603c77a425836e4591fa8a3fc0d379e,
+        type: 2}
+      propertyPath: ShapeModule.boxX
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 198558526604184572, guid: 2603c77a425836e4591fa8a3fc0d379e,
+        type: 2}
+      propertyPath: ShapeModule.boxY
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 198558526604184572, guid: 2603c77a425836e4591fa8a3fc0d379e,
+        type: 2}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2603c77a425836e4591fa8a3fc0d379e, type: 2}
   m_IsPrefabParent: 0
