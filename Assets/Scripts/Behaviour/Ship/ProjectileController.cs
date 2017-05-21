@@ -15,6 +15,13 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 
 		[SerializeField] float impact = ProjectileHitListener.InpactWeak;
 
+        [SerializeField]
+        AudioClip[] shotSounds;
+        [SerializeField]
+        float shotVolume;
+
+        AudioSource audioSource;
+
 		public float Impact
 		{
 			get { return impact; }
@@ -25,6 +32,11 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 		void Start()
 		{
 			this.body = GetComponent<Rigidbody>();
+            audioSource = GetComponent<AudioSource>();
+
+            int toPlayIndex = Random.Range(0, shotSounds.Length);
+
+            audioSource.PlayOneShot(shotSounds[toPlayIndex], shotVolume);
 		}
 
 		void Update()
