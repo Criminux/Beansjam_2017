@@ -12,15 +12,18 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 		[SerializeField]
 		private GameObject[] weapons;
 
-		private List<WeaponController> weaponControllers;
+		private List<WeaponController> weaponControllers = new System.Collections.Generic.List<WeaponController>();
 		
 		private InputProvider inputProvider;
 
 		void Start()
 		{
-			weaponControllers = weapons
-				.Select(weaponObject => weaponObject.GetComponent<WeaponController>())
-				.ToList();
+            foreach(GameObject weaponObj in weapons) {
+                foreach(WeaponController controller in weaponObj.GetComponents<WeaponController>())
+                {
+                    weaponControllers.Add(controller);
+                }
+            }
 			inputProvider = GetComponent<InputProvider>();
 		}
 		
