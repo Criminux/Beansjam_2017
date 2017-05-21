@@ -57,8 +57,8 @@ InputManager:
     m_Name: Forward
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: y
-    positiveButton: x
+    negativeButton: s
+    positiveButton: w
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -137,8 +137,8 @@ InputManager:
     m_Name: Roll
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: q
-    positiveButton: e
+    negativeButton: a
+    positiveButton: d
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
