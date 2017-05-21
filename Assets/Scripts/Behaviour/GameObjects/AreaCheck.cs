@@ -28,7 +28,11 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects {
 		/// </summary>
 		public event ReenteredWarningAreaHandler ReenteredWarningArea;
 
-		void OnTriggerExit(Collider collider)
+        public event EnterBarAreaHandler EnterBarArea;
+        public event LeftBarAreaHandler LeftBarArea;
+
+
+        void OnTriggerExit(Collider collider)
 		{
 			if (collider.tag == Tags.LegalArea)
 			{
@@ -40,6 +44,11 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects {
 				if (LeftWarningArea != null) LeftWarningArea();
 				Debug.Log(gameObject.name + " left the warning area");
 			}
+            else if (collider.tag == Tags.Bar)
+            {
+                if (LeftBarArea != null) LeftBarArea();
+                Debug.Log(gameObject.name + " left the Bar Area");
+            }
 
 		}
 
@@ -55,7 +64,12 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects {
 				if (ReenteredWarningArea != null) ReenteredWarningArea();
 				Debug.Log(gameObject.name + " reentered the warning area.");
 			}
-		}
+            else if (collider.tag == Tags.Bar)
+            {
+                if (EnterBarArea != null) EnterBarArea();
+                Debug.Log(gameObject.name + " entered Bar area.");
+            }
+        }
 
 		public delegate void LeftLegalAreaHandler();
 
@@ -64,5 +78,9 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects {
 		public delegate void LeftWarningAreaHandler();
 
 		public delegate void ReenteredWarningAreaHandler();
-	}
+
+        public delegate void EnterBarAreaHandler();
+        public delegate void LeftBarAreaHandler();
+
+    }
 }
