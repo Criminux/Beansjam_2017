@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player;
+using GloriousWhale.BeansJam17.Assets.Scripts.Constants;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 {
@@ -12,27 +14,57 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 
 		public float GetForwardInput()
 		{
-			return Input.GetAxis(Constants.Input.AxisForward);
+			return UnityEngine.Input.GetAxis(Constants.Input.AxisForward);
 		}
 
 		public float GetRollInput()
 		{
-			return Input.GetAxis(Constants.Input.AxisRoll);
+			return UnityEngine.Input.GetAxis(Constants.Input.AxisRoll);
 		}
 
 		public float GetYawInput()
 		{
-			return Input.GetAxis(Constants.Input.AxisMouseX);
+			return UnityEngine.Input.GetAxis(Constants.Input.AxisMouseX);
 		}
 
 		public float GetPitchInput()
 		{
-			return Input.GetAxis(Constants.Input.AxisMouseY);
+			return UnityEngine.Input.GetAxis(Constants.Input.AxisMouseY);
 		}
 
 		public bool GetShootingInput()
 		{
-			return Input.GetMouseButton(0);
+			return UnityEngine.Input.GetMouseButton(0);
 		}
-	}
+
+
+        private void Update()
+        {
+            if(UnityEngine.Input.GetKeyDown(KeyCode.J))
+            {
+                InitiateJump();
+            }
+        }
+
+        private void InitiateJump()
+        {
+            //TODO: Make Countdown
+            int toLoadScene = UnityEngine.Random.Range(1, 4);
+            
+            switch (toLoadScene)
+            {
+                case 1:
+                    SceneManager.LoadScene(SceneTypes.Game_Asteroid);
+                    break;
+                case 2:
+                    SceneManager.LoadScene(SceneTypes.Game_Bar);
+                    break;
+                case 3:
+                    SceneManager.LoadScene(SceneTypes.Game_Enemy);
+                    break;
+            }
+              
+            
+        }
+    }
 }
