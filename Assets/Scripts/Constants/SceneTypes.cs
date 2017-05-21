@@ -11,6 +11,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Constants
         public const string Game_Asteroid = "Game_Asteroid";
         public const string Game_Bar = "Game_Bar";
         public const string Game_Enemy = "Game_Enemy";
+        public const string Game_Police = "Game_Police";
 
     }
 }

@@ -49,7 +49,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
         private void InitiateJump()
         {
             //TODO: Make Countdown
-            int toLoadScene = UnityEngine.Random.Range(1, 4);
+            int toLoadScene = UnityEngine.Random.Range(1, 5);
             
             switch (toLoadScene)
             {
@@ -61,6 +61,9 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
                     break;
                 case 3:
                     SceneManager.LoadScene(SceneTypes.Game_Enemy);
+                    break;
+                case 4:
+                    SceneManager.LoadScene(SceneTypes.Game_Police);
                     break;
             }
               
