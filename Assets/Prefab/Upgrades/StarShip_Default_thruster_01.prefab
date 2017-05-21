@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 33178827076391420}
   - component: {fileID: 23100310326163614}
   m_Layer: 0
-  m_Name: StarShip_Default_thruster_01
+  m_Name: ThrusterStufe3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
