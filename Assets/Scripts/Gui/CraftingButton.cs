@@ -26,7 +26,7 @@ public class CraftingButton : MonoBehaviour {
 	
 	void Update ()
     {
-		if(playerCargoHold.GetAmountOf(ItemType.Asteroid_Material) < 50 || (playerCargoHold.Size - playerCargoHold.OccupiedSpace) < ItemType.Fuel.Size)
+		if(playerCargoHold.GetAmountOf(ItemType.Asteroid_Material) < 50)
         {
             button.enabled = false;
         }
