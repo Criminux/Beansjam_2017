@@ -26,7 +26,7 @@ public class CraftingButton : MonoBehaviour {
 	
 	void Update ()
     {
-		if(playerCargoHold.GetAmountOf(ItemType.Asteroid_Material) < 50)
+		if(playerCargoHold.GetAmountOf(ItemType.Asteroid_Material) < 50))
         {
             button.enabled = false;
         }
@@ -41,5 +41,6 @@ public class CraftingButton : MonoBehaviour {
         playerCargoHold.WithdrawItem(ItemType.Asteroid_Material, asteroidMaterialPrice);
         playerCargoHold.AddItem(ItemType.Fuel, addedFueldAmount);
         inventoryController.UpdateItemsList(playerCargoHold);
+        inventoryController.UpdateItemsCaption(playerCargoHold);
     }
 }

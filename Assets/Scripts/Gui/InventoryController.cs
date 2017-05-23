@@ -93,7 +93,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 		}
 
 
-		private void UpdateItemsCaption(CargoHold cargoHoldToDisplay)
+		public void UpdateItemsCaption(CargoHold cargoHoldToDisplay)
 		{
 			itemsCaptionObjectText.text = GetCargoHoldCaption(cargoHoldToDisplay);
 		}
