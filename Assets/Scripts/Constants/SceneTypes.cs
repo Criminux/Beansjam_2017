@@ -15,5 +15,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Constants
         public const string Game_SpaceStation = "Game_SpaceStation";
         public const string Game_Civil = "Game_Civil";
         public const string Game_Nebula = "Game_Nebula";
+
+        public const string Lose_Screen = "Lose Screen";
     }
 }

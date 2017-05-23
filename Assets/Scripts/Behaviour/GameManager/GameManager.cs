@@ -49,14 +49,14 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameManager
 
 		}
 
-		private static void UnlockCursor()
+		public static void UnlockCursor()
 		{
 			Debug.Log("unlocking cursor...");
 			Cursor.lockState = CursorLockMode.None;
 			Cursor.visible = true;
 		}
 
-		private static void LockCursor()
+        public static void LockCursor()
 		{
 			Debug.Log("locking cursor...");
 			Cursor.lockState = CursorLockMode.Locked;

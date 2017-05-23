@@ -17,6 +17,9 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
         ShipProperties shipProperties;
         GameManager.GameManager gameManager;
 
+        bool invertedX;
+        bool invertedY;
+
 
 		private void Start()
 		{
@@ -24,6 +27,9 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 			stationMenu = GameObject.FindGameObjectWithTag(Tags.StationMenu).GetComponent<StationMenuController>();
 			shipProperties = GetComponent<ShipProperties>();
             gameManager = GameObject.FindGameObjectWithTag(Tags.GameController).GetComponent<GameManager.GameManager>();
+
+            invertedX = PlayerPrefsManager.GetInvertedX();
+            invertedY = PlayerPrefsManager.GetInvertedY();
 		}
 
 		public float GetForwardInput()
@@ -44,7 +50,14 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
             }
             else
             {
-			    return UnityEngine.Input.GetAxis(Constants.Input.AxisMouseX);
+                if(!invertedX)
+                {
+			        return UnityEngine.Input.GetAxis(Constants.Input.AxisMouseX);
+                }
+                else
+                {
+                    return -UnityEngine.Input.GetAxis(Constants.Input.AxisMouseX);
+                }
             }
 		}
 
@@ -56,7 +69,14 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
             }
             else
             {
-                return UnityEngine.Input.GetAxis(Constants.Input.AxisMouseY);
+                if (!invertedY)
+                {
+                    return -UnityEngine.Input.GetAxis(Constants.Input.AxisMouseY);
+                }
+                else
+                {
+                    return UnityEngine.Input.GetAxis(Constants.Input.AxisMouseY);
+                }
             }
 		}
 

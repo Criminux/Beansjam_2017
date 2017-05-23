@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 82005635511650632}
   - component: {fileID: 114250898112679954}
   - component: {fileID: 64586575363535968}
+  - component: {fileID: 114459235717019032}
   m_Layer: 0
   m_Name: player_new
   m_TagString: Player
@@ -2370,7 +2371,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2541,6 +2542,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialMoney: 1000
   initialCrew: 3
+--- !u!114 &114459235717019032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1187148575863032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e54d9195c11644409faab46fd3716b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114484035512579720
 MonoBehaviour:
   m_ObjectHideFlags: 1
