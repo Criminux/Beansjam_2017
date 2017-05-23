@@ -8,6 +8,32 @@ public class PlayerPrefsManager : MonoBehaviour {
     const string MASTER_VOLUME_KEY = "master_volume";
     const string DIFFICULTY_KEY = "difficulty";
     const string LEVEL_KEY = "level_unlocked_";
+    const string X_INVERTED = "x_inverted";
+    const string Y_INVERTED = "y_inverted";
+
+    // Inverted Controls
+    public static void SetInvertedX(bool inverted)
+    {
+        if(inverted) PlayerPrefs.SetInt(X_INVERTED, 1);
+        else PlayerPrefs.SetInt(X_INVERTED, 0);
+    }
+
+    public static bool GetInvertedX()
+    {
+        if(PlayerPrefs.GetInt(X_INVERTED) == 1) return true;
+        else return false;
+    }
+    public static void SetInvertedY(bool inverted)
+    {
+        if (inverted) PlayerPrefs.SetInt(Y_INVERTED, 1);
+        else PlayerPrefs.SetInt(Y_INVERTED, 0);
+    }
+
+    public static bool GetInvertedY()
+    {
+        if (PlayerPrefs.GetInt(Y_INVERTED) == 1) return true;
+        else return false;
+    }
 
     // Master Volume
     public static void SetMasterVolume(float volume)

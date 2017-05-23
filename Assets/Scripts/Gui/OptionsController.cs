@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class OptionsController : MonoBehaviour {
     // Public 
-    public Slider volumeSlider, difficultySlider, levelSlider;
+    public Slider volumeSlider;
 
     // Private
     private LevelManager levelManager;
     private MusicManager musicManager;
+
+    [SerializeField]
+    Toggle invertXToggle, invertYToggle;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +20,6 @@ public class OptionsController : MonoBehaviour {
         musicManager = FindObjectOfType<MusicManager>();
 
         volumeSlider.value = PlayerPrefsManager.GetMasterVolume();
-        difficultySlider.value = PlayerPrefsManager.GetDifficulty();
 	}
 	
 	// Update is called once per frame
@@ -28,14 +30,19 @@ public class OptionsController : MonoBehaviour {
     public void SaveAndExit()
     {
         PlayerPrefsManager.SetMasterVolume(volumeSlider.value);
-        PlayerPrefsManager.SetDifficulty(difficultySlider.value);
+
+        PlayerPrefsManager.SetInvertedX(invertXToggle.isOn);
+        PlayerPrefsManager.SetInvertedY(invertYToggle.isOn);
+
         levelManager.LevelManager_LoadLevel("Main Menu");
     }
 
     public void SetDefaults()
     {
         volumeSlider.value = 0.1f;
-        difficultySlider.value = 2f;
-    }
 
+        invertXToggle.isOn = false;
+        invertYToggle.isOn = false;
+    }
+    
 }
