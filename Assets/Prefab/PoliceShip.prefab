@@ -402,7 +402,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 855604bf69050b449b3a5810b15a60ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 100
+  initialHealth: 150
   initialShield: 120
   shieldRegenerationPerSecond: 10
 --- !u!114 &114160534870405662
@@ -455,6 +455,7 @@ MonoBehaviour:
   projectile: {fileID: 1232926923755396, guid: b45725930ee5d744b8087a8b58452c32, type: 2}
   projectileSpawn: {fileID: 4151305937719386}
   shotCooldown: 0.1
+  crewMulitplier: 0.2
 --- !u!114 &114207203733441476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -480,6 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8faf750c836e96429cb36fab9ca06a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectKillReward: 400
 --- !u!114 &114249127500294742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -545,6 +547,7 @@ MonoBehaviour:
   projectile: {fileID: 1232926923755396, guid: b45725930ee5d744b8087a8b58452c32, type: 2}
   projectileSpawn: {fileID: 4148458671123148}
   shotCooldown: 0.1
+  crewMulitplier: 0.2
 --- !u!114 &114411456334807862
 MonoBehaviour:
   m_ObjectHideFlags: 1

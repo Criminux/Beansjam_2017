@@ -20,8 +20,11 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
         bool invertedX;
         bool invertedY;
 
+        [SerializeField]
+        float civilProtectionMoney, crewMultiplier;
 
-		private void Start()
+
+        private void Start()
 		{
 			playerProperties = GetComponent<PlayerProperties>();
 			stationMenu = GameObject.FindGameObjectWithTag(Tags.StationMenu).GetComponent<StationMenuController>();
@@ -158,7 +161,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
                 Debug.Log("You're interacting with a Civil");
                 if(other.GetComponent<CivilBehaviour>().HasPaid == false)
                 {
-                    playerProperties.Money += 10;
+                    playerProperties.Money += civilProtectionMoney * (crewMultiplier * playerProperties.Crew);
                     other.GetComponent<CivilBehaviour>().HasPaid = true;
                 }
             }
