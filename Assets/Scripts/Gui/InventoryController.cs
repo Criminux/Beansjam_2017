@@ -98,7 +98,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Gui
 			itemsCaptionObjectText.text = GetCargoHoldCaption(cargoHoldToDisplay);
 		}
 
-		private void UpdateItemsList(CargoHold cargoHoldToDisplay)
+		public void UpdateItemsList(CargoHold cargoHoldToDisplay)
 		{
 			var lines = cargoHoldToDisplay.Content
 				.Where(amountForItem => amountForItem.Value != 0)
