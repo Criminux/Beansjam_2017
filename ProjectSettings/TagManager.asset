@@ -12,6 +12,7 @@ TagManager:
   - Civil
   - SpaceStation
   - StationMenu
+  - Projectile
   layers:
   - Default
   - TransparentFX

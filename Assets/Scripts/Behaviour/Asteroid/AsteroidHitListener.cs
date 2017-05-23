@@ -21,7 +21,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Asteroid
 
 		public override void Hit(float impact)
 		{
-			objectHealth.Demage(demagePerImpact);
+			objectHealth.Damage(demagePerImpact);
 		}
 	}
 }

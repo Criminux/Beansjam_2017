@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GloriousWhale.BeansJam17.Assets.Scripts.Constants;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,10 +9,13 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects
 	public class ObjectHealth : MonoBehaviour
 	{
 
-		/// <summary>
-		/// Health cannot be restored by default. It is only reduced when <see cref="Shield"/> reaches zero.
-		/// </summary>
-		[SerializeField]
+        [SerializeField]
+        float damageAmountFromProjectile;
+
+        /// <summary>
+        /// Health cannot be restored by default. It is only reduced when <see cref="Shield"/> reaches zero.
+        /// </summary>
+        [SerializeField]
 		private float initialHealth;
 
 		/// <summary>
@@ -52,7 +56,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects
 			regenerateShield();
 		}
 
-		public void Demage(float amount)
+		public void Damage(float amount)
 		{
 			var newShield = Shield - amount;
 			var newHealth = Health;
@@ -73,7 +77,15 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.GameObjects
 			Shield = Mathf.Min(initialShield, newShieldValue);
 		}
 
-		public delegate void HealthReachedZeroHandler();
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.tag == Tags.Projectile)
+            {
+                Damage(damageAmountFromProjectile);
+            }
+        }
+
+        public delegate void HealthReachedZeroHandler();
 		public delegate void HealthChangedHandler(float oldHealth, float newHealth);
 	}
 }

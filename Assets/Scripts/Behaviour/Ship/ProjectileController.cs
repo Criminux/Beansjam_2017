@@ -13,7 +13,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 
 		[SerializeField] float lifetime;
 
-		[SerializeField] float impact = ProjectileHitListener.InpactWeak;
+		[SerializeField] float impact = ProjectileHitListener.ImpactHead;
 
         [SerializeField]
         AudioClip[] shotSounds;

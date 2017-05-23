@@ -120,7 +120,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Player
 			if (collision.gameObject.GetComponent<CausesShipKnockback>() != null)
 			{
 				ForwardSpeed = -collisionKnockback;
-				objectHealth.Demage(demageOnCollision);
+				objectHealth.Damage(demageOnCollision);
 			}
 		}
 

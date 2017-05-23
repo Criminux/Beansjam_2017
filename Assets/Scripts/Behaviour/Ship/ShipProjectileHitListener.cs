@@ -14,6 +14,6 @@ public class ShipProjectileHitListener : ProjectileHitListener
 
 	public override void Hit(float impact)
 	{
-		objectHealth.Demage(impact *10);
+		objectHealth.Damage(impact *10);
 	}
 }

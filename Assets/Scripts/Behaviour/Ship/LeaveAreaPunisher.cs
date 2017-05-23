@@ -26,7 +26,7 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
 		void Update()
 		{
 			if(isPunishing)
-				_objectHealth.Demage(healthDecreasePerSecond * Time.deltaTime);
+				_objectHealth.Damage(healthDecreasePerSecond * Time.deltaTime);
 		}
 	}
 }
