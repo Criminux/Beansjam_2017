@@ -23,6 +23,11 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
         [SerializeField]
         float civilProtectionMoney, crewMultiplier;
 
+        [SerializeField]
+        Animator hyperJump;
+        float hyperJumpTimer;
+        float hyperJumpTimerSet = 5f;
+        bool isJumping = false;
 
         private void Start()
 		{
@@ -102,43 +107,58 @@ namespace GloriousWhale.BeansJam17.Assets.Scripts.Behaviour.Ship
             {
                 InitiateJump();
             }
+
+            if(isJumping)
+            {
+                hyperJumpTimer -= Time.deltaTime;
+                if (hyperJumpTimer <= 0)
+                {
+                    isJumping = false;
+
+                    int toLoadScene = UnityEngine.Random.Range(1, 8);
+
+                    transform.position = new Vector3(0, 0, 0);
+
+                    switch (toLoadScene)
+                    {
+                        case 1:
+                            SceneManager.LoadScene(SceneTypes.Game_Asteroid);
+                            break;
+                        case 2:
+                            SceneManager.LoadScene(SceneTypes.Game_Bar);
+                            break;
+                        case 3:
+                            SceneManager.LoadScene(SceneTypes.Game_Enemy);
+                            break;
+                        case 4:
+                            SceneManager.LoadScene(SceneTypes.Game_Police);
+                            break;
+                        case 5:
+                            SceneManager.LoadScene(SceneTypes.Game_SpaceStation);
+                            break;
+                        case 6:
+                            SceneManager.LoadScene(SceneTypes.Game_Civil);
+                            break;
+                        case 7:
+                            SceneManager.LoadScene(SceneTypes.Game_Nebula);
+                            break;
+                    }
+                }
+            }
         }
 
         private void InitiateJump()
         {
-            if(shipProperties.Fuel > 0)
+            if (shipProperties.Fuel > 0 && isJumping == false)
             {
                 shipProperties.Fuel -= 1;
+                hyperJumpTimer = hyperJumpTimerSet;
+                isJumping = true;
+                hyperJump.SetTrigger("hyperJumpTrigger");
 
-                int toLoadScene = UnityEngine.Random.Range(1, 8);
-
-                transform.position = new Vector3(0, 0, 0);
-            
-                switch (toLoadScene)
-                {
-                    case 1:
-                        SceneManager.LoadScene(SceneTypes.Game_Asteroid);
-                        break;
-                    case 2:
-                        SceneManager.LoadScene(SceneTypes.Game_Bar);
-                        break;
-                    case 3:
-                        SceneManager.LoadScene(SceneTypes.Game_Enemy);
-                        break;
-                    case 4:
-                        SceneManager.LoadScene(SceneTypes.Game_Police);
-                        break;
-                    case 5:
-                        SceneManager.LoadScene(SceneTypes.Game_SpaceStation);
-                        break;
-                    case 6:
-                        SceneManager.LoadScene(SceneTypes.Game_Civil);
-                        break;
-                    case 7:
-                        SceneManager.LoadScene(SceneTypes.Game_Nebula);
-                        break;
-                }
             }
+
+                
         }
 
         private void OnTriggerStay(Collider other)
